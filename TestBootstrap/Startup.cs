@@ -76,14 +76,14 @@ namespace TestBootstrap
 
             app.UseMvc(routes =>
             {
+                //routes.MapRoute(
+                //    name: "default",
+                //    template: "UserAim",
+                //    defaults: new { controller = "UserAim", action = "Aim" });
+
+
                 routes.MapRoute(
                     name: "default",
-                    template: "UserAim",
-                    defaults: new { controller = "UserAim", action = "Aim" });
-
-
-                routes.MapRoute(
-                    name: "default1",
                     template: "{controller=Home}/{action=Index}/{id?}");
 
 
