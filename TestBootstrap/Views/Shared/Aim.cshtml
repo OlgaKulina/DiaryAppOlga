@@ -9,11 +9,14 @@
 
 <h1>Aim</h1>
 
-<a asp-action="CreateAim">Add the aim</a>
-<table class="table">
-    <tr><td>Aim</td><td>Description</td><td>StartDate</td></tr>
+@*<a class="alert-light" asp-action="CreateAim">Add the aim</a>*@
+<table class="table table-striped">
+    <tr><td>Aim</td><td>Description</td><td>StartDate</td><td>EndDate</td></tr>
     @foreach (var item in Model)
     {
-        <tr><td>@item.Aim</td><td>@item.Description</td><td>@item.StartDate</td></tr>
+        <tr><td>@item.Aim</td><td>@item.Description</td><td>@item.StartDate</td><td>@item.EndDate </td></tr>
     }
 </table>
+
+<a class="badge-primary" asp-action="CreateAim"> Set aim </a>
+

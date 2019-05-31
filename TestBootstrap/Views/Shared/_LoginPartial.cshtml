@@ -14,7 +14,7 @@
             <a class="nav-link text-dark dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
             <div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/Index">Manage Account</a>
-                <a class="dropdown-item">Aim</a>
+                <a class="dropdown-item" asp-area="" asp-controller="UserAim" asp-action="Aim">Aim</a>
                 <a class="dropdown-item">Tasks</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">Logout</a>
