@@ -13,6 +13,8 @@ using Microsoft.EntityFrameworkCore;
 using TestBootstrap.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using TestBootstrap.Models;
 
 namespace TestBootstrap
 {
@@ -41,6 +43,12 @@ namespace TestBootstrap
             services.AddDefaultIdentity<IdentityUser>()
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+
+            services.AddEntityFrameworkSqlServer()
+                .AddDbContext<UserAimContext>(options=>
+                options.UseSqlServer(Configuration.GetConnectionString("UserAimConnection")));
+
             
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
@@ -70,7 +78,19 @@ namespace TestBootstrap
             {
                 routes.MapRoute(
                     name: "default",
+                    template: "UserAim",
+                    defaults: new { controller = "UserAim", action = "Aim" });
+
+
+                routes.MapRoute(
+                    name: "default1",
                     template: "{controller=Home}/{action=Index}/{id?}");
+
+
+                
+
+
+
             });
         }
     }

@@ -1,0 +1,19 @@
+﻿
+
+@model IEnumerable<TestBootstrap.Models.UserAim>
+
+
+@{
+    ViewData["Title"] = "Aim";
+}
+
+<h1>Aim</h1>
+
+<a asp-action="CreateAim">Add the aim</a>
+<table class="table">
+    <tr><td>Aim</td><td>Description</td><td>StartDate</td></tr>
+    @foreach (var item in Model)
+    {
+        <tr><td>@item.Aim</td><td>@item.Description</td><td>@item.StartDate</td></tr>
+    }
+</table>
