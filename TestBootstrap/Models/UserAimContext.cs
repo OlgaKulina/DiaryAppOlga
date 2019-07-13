@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace TestBootstrap.Models
 {
-    public class UserAimContext : DbContext
+    public class UserAimContext : IdentityDbContext
 
     {
         public DbSet<UserAim> UserAims { get; set; }
