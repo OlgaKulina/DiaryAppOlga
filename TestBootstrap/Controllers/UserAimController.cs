@@ -35,6 +35,23 @@ namespace TestBootstrap.Controllers
             return RedirectToAction("Aim");
         }
 
+        //public async Task<IActionResult> Details(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+       
+
+        //    if (Aim == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return View(UserAims);
+        //}
+
 
     }
 }
