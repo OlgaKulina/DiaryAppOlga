@@ -45,11 +45,14 @@ namespace TestBootstrap
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
 
-            services.AddEntityFrameworkSqlServer()
-                .AddDbContext<UserAimContext>(options=>
-                options.UseSqlServer(Configuration.GetConnectionString("UserAimConnection")));
+            //services.AddEntityFrameworkSqlServer()
+            //    .AddDbContext<UserAimContext>(options=>
+            //    options.UseSqlServer(Configuration.GetConnectionString("UserAimConnection")));
 
-            
+            services.AddDbContext<UserAimContext>(options =>
+               options.UseSqlServer(Configuration.GetConnectionString("UserAimConnection")));
+
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
