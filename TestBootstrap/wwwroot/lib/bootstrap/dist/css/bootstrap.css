@@ -51,6 +51,7 @@ html {
 
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
+  
 }
 
 body {
@@ -61,8 +62,8 @@ body {
     line-height: 1.5;
     color: #212529;
     text-align: left;
-    background-color: #fff;
-    background: #007bff;
+    background: #f46756;
+    /*background-image: url('https://source.unsplash.com/BtbjCFUvBXs/1920x1080');*/
 }
 
 [tabindex="-1"]:focus {
@@ -155,7 +156,7 @@ sup {
 }
 
 a {
-  color: #007bff;
+  /*color: #007bff;*/
   text-decoration: none;
   background-color: transparent;
 }
@@ -3941,7 +3942,7 @@ input[type="button"].btn-block {
   width: 1rem;
   height: 1rem;
   margin-top: -0.25rem;
-  background-color: #007bff;
+  /*background-color: #007bff;*/
   border: 0;
   border-radius: 1rem;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -4268,6 +4269,12 @@ input[type="button"].btn-block {
   background: no-repeat center center;
   background-size: 100% 100%;
 }
+
+.navbar-default {
+    /*background-color: transparent;*/
+    background-color:unset;
+}
+
 
 @media (max-width: 575.98px) {
   .navbar-expand-sm > .container,
@@ -5308,7 +5315,7 @@ a.badge-dark:focus, a.badge-dark.focus {
   color: #fff;
   text-align: center;
   white-space: nowrap;
-  background-color: #007bff;
+  /*background-color: #007bff;*/
   transition: width 0.6s ease;
 }
 
@@ -5362,12 +5369,12 @@ a.badge-dark:focus, a.badge-dark.focus {
   text-align: inherit;
 }
 
-.list-group-item-action:hover, .list-group-item-action:focus {
-  z-index: 1;
-  color: #495057;
-  text-decoration: none;
-  background-color: #f8f9fa;
-}
+    .list-group-item-action:hover, .list-group-item-action:focus {
+        z-index: 1;
+        color: #495057;
+        text-decoration: none;
+        background-color: #fbcac5;
+    }
 
 .list-group-item-action:active {
   color: #212529;
@@ -5396,16 +5403,16 @@ a.badge-dark:focus, a.badge-dark.focus {
 
 .list-group-item.disabled, .list-group-item:disabled {
   color: #6c757d;
-  pointer-events: none;
+  pointer-events:none;
   background-color: #fff;
 }
 
-.list-group-item.active {
-  z-index: 2;
-  color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
-}
+    .list-group-item.active {
+        z-index: 2;
+        color: #fff;
+        background-color: #f46756;
+        border-color: #f46756;
+    }
 
 .list-group-horizontal {
   -ms-flex-direction: row;
@@ -6536,7 +6543,7 @@ a.close.disabled {
 }
 
 .bg-primary {
-  background-color: #007bff !important;
+  /*background-color: #007bff !important;*/
 }
 
 a.bg-primary:hover, a.bg-primary:focus,
@@ -10064,4 +10071,21 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6;
   }
 }
+.masthead {
+    height: 100vh;
+    min-height: 500px;
+    background-image: url('https://cdn.pixabay.com/photo/2015/09/05/20/58/smartphone-925287_960_720.jpg');
+    background-size:cover;
+    background-position:center;
+    background-repeat: no-repeat;
+}
+
+
+
+
+
 /*# sourceMappingURL=bootstrap.css.map */
+
+
+
+

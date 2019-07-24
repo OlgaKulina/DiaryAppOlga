@@ -9,10 +9,31 @@
         <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
     </div>*@
 
-<div class="text-left">
-    <h1 class="display-4">Welcome</h1>
-    <p> The DiaryApp is a tool that helps you achieve your goals.</p>
-    @*<button class="btn btn-primary" asp-area="Identity" asp-page="/Account/Register"> Get Started </button>*@
-</div>
+<header class="masthead">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="jumbotron jumbotron-fluid bg-transparent text-dark">
+                <div class="container">
+                    <h1 class="display-4">Welcome</h1>
+                    <p class="lead"> The DiaryApp is a tool that helps you achieve your goals.</p>
 
+                    <p><a class="btn btn-light btn-lg" asp-action="About" role="button">Learn more &raquo;</a></p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+@*<div class="jumbotron jumbotron-fluid bg-transparent">
+    <div class="container-fluid">
+        <h1 class="display-4">Welcome</h1>
+        <p class="lead"> The DiaryApp is a tool that helps you achieve your goals.</p>
+        
+        <p><a class="btn btn-light btn-lg" asp-action="About" role="button">Learn more &raquo;</a></p>
+
+    </div>
+</div>*@
 
