@@ -5,10 +5,10 @@ using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using TestBootstrap.Data;
+using DiaryAppOlga.Data;
 
-[assembly: HostingStartup(typeof(TestBootstrap.Areas.Identity.IdentityHostingStartup))]
-namespace TestBootstrap.Areas.Identity
+[assembly: HostingStartup(typeof(DiaryAppOlga.Areas.Identity.IdentityHostingStartup))]
+namespace DiaryAppOlga.Areas.Identity
 {
     public class IdentityHostingStartup : IHostingStartup
     {

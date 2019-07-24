@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using TestBootstrap.Models;
+using DiaryAppOlga.Models;
 
-namespace TestBootstrap.Migrations
+namespace DiaryAppOlga.Migrations
 {
     [DbContext(typeof(UserAimContext))]
     partial class UserAimContextModelSnapshot : ModelSnapshot

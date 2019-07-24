@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace TestBootstrap.Areas.Identity.Pages.Account.Manage
+namespace DiaryAppOlga.Areas.Identity.Pages.Account.Manage
 {
     public static class ManageNavPages
     {

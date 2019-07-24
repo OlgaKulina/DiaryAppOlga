@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace TestBootstrap.Models
+namespace DiaryAppOlga.Models
 {
     public class WeeklyTasks
     {

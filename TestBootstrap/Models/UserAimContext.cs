@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 
 
-namespace TestBootstrap.Models
+namespace DiaryAppOlga.Models
 {
     public class UserAimContext : IdentityDbContext
 

@@ -10,13 +10,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using TestBootstrap.Data;
+using DiaryAppOlga.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using TestBootstrap.Models;
+using DiaryAppOlga.Models;
 
-namespace TestBootstrap
+namespace DiaryAppOlga
 {
     public class Startup
     {

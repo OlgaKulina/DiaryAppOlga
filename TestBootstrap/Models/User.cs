@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
 
-namespace TestBootstrap.Models
+namespace DiaryAppOlga.Models
 {
     public class User
     {

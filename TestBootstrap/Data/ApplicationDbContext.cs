@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using TestBootstrap.Models;
+using DiaryAppOlga.Models;
 
-namespace TestBootstrap.Data
+namespace DiaryAppOlga.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {

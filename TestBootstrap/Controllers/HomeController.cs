@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using TestBootstrap.Models;
+using DiaryAppOlga.Models;
 
-namespace TestBootstrap.Controllers
+namespace DiaryAppOlga.Controllers
 {
     public class HomeController : Controller
     {

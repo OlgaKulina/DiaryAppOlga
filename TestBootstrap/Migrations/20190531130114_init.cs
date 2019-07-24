@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace TestBootstrap.Migrations
+namespace DiaryAppOlga.Migrations
 {
     public partial class init : Migration
     {

@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using TestBootstrap.Models;
+using DiaryAppOlga.Models;
 
-namespace TestBootstrap.Migrations
+namespace DiaryAppOlga.Migrations
 {
     [DbContext(typeof(UserAimContext))]
     [Migration("20190531130114_init")]
