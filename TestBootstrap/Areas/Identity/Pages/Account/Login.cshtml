@@ -2,7 +2,7 @@
 @model LoginModel
 
 @{
-    ViewData["Title"] = "Log in";
+    ViewData["Title"] = "Welcome back!";
 }
 
 <h1>@ViewData["Title"]</h1>
@@ -14,8 +14,9 @@
                 <hr />
                 <div asp-validation-summary="All" class="text-danger"></div>
                 <div class="form-group">
-                    <label asp-for="Input.Email"></label>
-                    <input asp-for="Input.Email" class="form-control" />
+                    
+                    <label asp-for="Input.Email">Email address</label>
+                    <input asp-for="Input.Email" @*input type="email" class="form-control"*@ @*placeholder="Email address" required autofocus*@ />
                     <span asp-validation-for="Input.Email" class="text-danger"></span>
                 </div>
                 <div class="form-group">
