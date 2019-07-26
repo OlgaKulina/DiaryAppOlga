@@ -1,24 +1,27 @@
-﻿
-
-@model IEnumerable<DiaryAppOlga.Models.UserAim>
-
+﻿@model IEnumerable<DiaryAppOlga.Models.UserAim>
 
 @{
     ViewData["Title"] = "Aim";
 }
 
-<h1>My Aim</h1>
+<div class="container-fluid py-lg-5 m-lg-3">
+    <h1 class="text-lg-center font-weight-light">My Aim</h1>
+</div> 
 
-@*<a class="alert-light" asp-action="CreateAim">Add the aim</a>*@
-<table class="table table-striped">
-    <tr><td>Aim</td><td>Description</td><td>StartDate</td><td>EndDate</td></tr>
-    @foreach (var item in Model)
-    {
-        <tr><td>@item.Aim</td>
-    <td>@item.Description</td><td>@item.StartDate</td><td>@item.EndDate </td></tr>
-    }
-</table>
-@*<a class="badge-primary" asp-action="CreateAim"> Set aim </a>*@
+    <div class="container-fluid m-lg-2">
+        <table class="table table-striped">
+            <tr><td>Aim</td><td>Description</td><td>StartDate</td><td>EndDate</td></tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Aim</td>
+                    <td>@item.Description</td>
+                    <td>@item.StartDate</td>
+                    <td>@item.EndDate </td>
+                </tr>
+            }
+        </table>       
 
-<a class="btn btn-light btn-circle btn-circle-lg m-1"  asp-action="CreateAim"> + <i></i></a>
+        <a class="btn btn-light btn-circle btn-circle-lg m-1 shadow-lg" asp-action="CreateAim"> + <i></i></a>
 
+    </div>
