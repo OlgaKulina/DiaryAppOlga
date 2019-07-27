@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Microsoft.TestBootstrap.ApplicationCore.Interfaces
+namespace Microsoft.DiaryAppOlga.ApplicationCore.Interfaces
 {
     public interface IUserTaskService
     {
