@@ -2,6 +2,7 @@
 
 namespace DiaryAppOlga.Models
 {
+    //change - create collection
     public class Grade
     {
        
