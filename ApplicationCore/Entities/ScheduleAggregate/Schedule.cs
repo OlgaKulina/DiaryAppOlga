@@ -8,6 +8,5 @@ namespace Microsoft.DiaryAppOlga.ApplicationCore.Entities.ScheduleAggregate
     {
         public int UserId { get; set; }
 
-
     }
 }
