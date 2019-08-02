@@ -16,6 +16,8 @@ namespace Microsoft.DiaryAppOlga.ApplicationCore.Interfaces
         Task UpdateAsync(T entity);        
         Task DeleteAsync(T entity);
         Task<int> CountAsync(ISpecification<T> spec);
+        //сохранение
+        Task SaveAsync(T entity);
 
 
 
