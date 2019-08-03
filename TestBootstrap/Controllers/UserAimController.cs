@@ -27,6 +27,11 @@ namespace DiaryAppOlga.Controllers
             return View();
         }
 
+        //public IActionResult DetailsAim()
+        //{
+        //    return View();
+        //}
+
         [HttpPost]
         public async Task<IActionResult> CreateAim(UserAim aim_)
         {
@@ -35,22 +40,19 @@ namespace DiaryAppOlga.Controllers
             return RedirectToAction("Aim");
         }
 
-        //public async Task<IActionResult> Details(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return NotFound();
-        //    }
+        public async Task<IActionResult> DetailsAim(int? id)
+        {
+            if (id != null)
+            {
+                UserAim userAim = await db.UserAims.FirstOrDefaultAsync(a => a.Id == id);
+                if (userAim != null)
+                    return View(userAim);
+            }
+            return NotFound();
+        }
 
-       
 
-        //    if (Aim == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    return View(UserAims);
-        //}
+        
 
 
     }

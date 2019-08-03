@@ -1,0 +1,27 @@
+﻿@model DiaryAppOlga.Models.UserAim
+
+@{
+
+    ViewBag.Title = "Details";
+}
+
+<div class="container-fluid py-lg-5 m-lg-3">
+    @*<h3 class="text-md-left font-weight-light">Details</h3>*@
+
+    <div class="card w-50">
+        <div class="card-header">
+            <h2>
+                @Html.DisplayFor(modelItem => modelItem.Aim)
+            </h2>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Reach until: @Html.DisplayFor(modelItem => modelItem.EndDate)</h5>
+            <p class="card-text text-truncate">@Html.DisplayFor(modelItem => modelItem.Description)</p>
+            <a asp-action="Aim" class="btn btn-outline-dark-rounded">Back to List</a>
+            <a asp-action="Aim" class="btn btn-outline-dark-rounded">Edit</a>
+            <a asp-action="Aim" class="btn btn-outline-dark-rounded">Delete</a>
+        </div>
+    </div>
+
+</div>
+
