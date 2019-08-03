@@ -6,5 +6,7 @@ namespace Microsoft.DiaryAppOlga.ApplicationCore.Interfaces
     public interface IWeeklyTasksService
     {
         Task CreateWeeklyTaskAsync(int weeklyTaskId, int scheduleId);
+
+        Task DeleteWeeklyTaskAsync(int weeklyTaskId);
     }
 }

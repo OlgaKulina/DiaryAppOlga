@@ -12,6 +12,8 @@ namespace DiaryAppOlga.ViewModels
         
         [Required(ErrorMessage = "Set date")]
         [Display(Name = "Date")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime SetDate { get; set; }
 
 

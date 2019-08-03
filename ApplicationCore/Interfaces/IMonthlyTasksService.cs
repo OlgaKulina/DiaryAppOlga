@@ -6,5 +6,7 @@ namespace ApplicationCore.Interfaces
     public interface IMonthlyTasksService
     {
         Task CreateMonthlyTaskAsync(int monthlyTaskId, int scheduleId);
+
+        Task DeleteMonthlyTaskAsync(int monthlyTaskId);
     }
 }
