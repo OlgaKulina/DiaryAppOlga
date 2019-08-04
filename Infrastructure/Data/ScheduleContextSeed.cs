@@ -2,14 +2,14 @@
 using System;
 using System.Collections.Generic;
 
-
+//namespace Infrastructure.Data
 namespace Microsoft.DiaryAppOlga.Infrastructure.Data
 {
     public class ScheduleContextSeed
     {
 
         static IEnumerable<Priority> GetPreconfiguredPriorities()
-        {            
+        {
             return new List<Priority>()
             {
              new Priority() { PriorityName="High"},

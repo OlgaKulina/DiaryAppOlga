@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using DiaryAppOlga.Models;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace DiaryAppOlga.Controllers
 {
@@ -27,15 +28,12 @@ namespace DiaryAppOlga.Controllers
             return View();
         }
 
-        //public IActionResult DetailsAim()
-        //{
-        //    return View();
-        //}
+        
 
         [HttpPost]
-        public async Task<IActionResult> CreateAim(UserAim aim_)
+        public async Task<IActionResult> CreateAim(UserAim _aim)
         {
-            db.UserAims.Add(aim_);
+            db.UserAims.Add(_aim);
             await db.SaveChangesAsync();
             return RedirectToAction("Aim");
         }
@@ -51,9 +49,116 @@ namespace DiaryAppOlga.Controllers
             return NotFound();
         }
 
+        //[HttpPost]
+        //public async Task<IActionResult> EditAim(UserAim aim)
+        //{
+        //    db.UserAims.Update(aim);
+        //    await db.SaveChangesAsync();
+        //    return RedirectToAction("Index");
+        //}
 
+        public async Task<IActionResult> EditAim(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var aim = await db.UserAims.FindAsync(id);
+            if (aim == null)
+            {
+                return NotFound();
+            }
+            return View(aim);
+        }
+
+        [HttpPost, ActionName("EditAim")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditAimPost(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var aimToUpdate = await db.UserAims.FirstOrDefaultAsync(a => a.Id == id);
+            if (await TryUpdateModelAsync<UserAim>(
+                aimToUpdate,
+                "",
+              a => a.UserId, a => a.Aim, a => a.Description, a => a.StartDate, a => a.EndDate))
+            {
+                try
+                {
+                    await db.SaveChangesAsync();
+                    return RedirectToAction(nameof(Aim));
+                }
+                catch (DbUpdateException /* ex */)
+                {
+                    
+                    ModelState.AddModelError("", "Unable to save changes. " +
+                        "Try again, and if the problem persists, " +
+                        "see your system administrator.");
+                }
+            }
+            return View(aimToUpdate);
+        }
+
+
+        //From MS
+        public async Task<IActionResult> DeleteAim(int? id, bool? saveChangesError = false)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var aim = await db.UserAims
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (aim == null)
+            {
+                return NotFound();
+            }
+
+            if (saveChangesError.GetValueOrDefault())
+            {
+                ViewData["ErrorMessage"] =
+                    "Delete failed. Try again, and if the problem persists " +
+                    "see your system administrator.";
+            }
+
+            return View(aim);
+        }
         
 
+        [HttpPost, ActionName("DeleteAim")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var aim = await db.UserAims.FindAsync(id);
+            if (aim == null)
+            {
+                return RedirectToAction(nameof(Aim));
+            }
 
+            try
+            {
+                db.UserAims.Remove(aim);
+                await db.SaveChangesAsync();
+                return RedirectToAction(nameof(Aim));
+            }
+            catch (DbUpdateException /* ex */)
+            {
+                //Log the error (uncomment ex variable name and write a log.)
+                return RedirectToAction(nameof(DeleteAim), new { Id = id, saveChangesError = true });
+            }
+        }
+
+        private bool StudentExists(int id)
+        {
+            return db.UserAims.Any(e => e.Id == id);
+        }
     }
 }
+
+
+    

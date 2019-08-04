@@ -3,11 +3,11 @@ using Microsoft.DiaryAppOlga.ApplicationCore.Entities.ScheduleAggregate;
 using Microsoft.EntityFrameworkCore;
 
 namespace Microsoft.DiaryAppOlga.Infrastructure.Data
-
+//namespace Infrastructure.Data
 {
-    public class ScheduleContext: DbContext
+    public class ScheduleContext : DbContext
     {
-        public ScheduleContext(DbContextOptions<ScheduleContext>options):base(options)
+        public ScheduleContext(DbContextOptions<ScheduleContext> options) : base(options)
         {
         }
         public DbSet<Schedule> Schedules { get; set; }
