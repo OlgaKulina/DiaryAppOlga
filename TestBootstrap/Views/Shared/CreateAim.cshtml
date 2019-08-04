@@ -1,7 +1,7 @@
 ﻿@model DiaryAppOlga.Models.UserAim
 
 @{
-    ViewBag.Title = "Set a goal";
+    ViewBag.Title = "Set your goal";
  }
 
 <h1>CreateAim</h1>
@@ -24,7 +24,9 @@
             </div>
             <div class="form-group">
                 <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
+                @*<input asp-for="Description" class="form-control" />*@
+                <textarea class="form-control" input asp-for="Description" cols="5"> </textarea>
+
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -45,7 +47,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Aim">Back to List</a>
 </div>
 
 @section Scripts {

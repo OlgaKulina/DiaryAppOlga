@@ -22,13 +22,12 @@ namespace DiaryAppOlga.Controllers
         {
             return View(await db.UserAims.ToListAsync());
         }
-
+        //
         public IActionResult CreateAim()
         {
             return View();
         }
-
-        
+              
 
         [HttpPost]
         public async Task<IActionResult> CreateAim(UserAim _aim)
@@ -153,7 +152,7 @@ namespace DiaryAppOlga.Controllers
             }
         }
 
-        private bool StudentExists(int id)
+        private bool UserAimsExists(int id)
         {
             return db.UserAims.Any(e => e.Id == id);
         }
