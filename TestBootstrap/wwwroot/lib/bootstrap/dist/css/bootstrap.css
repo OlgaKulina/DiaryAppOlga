@@ -3084,7 +3084,7 @@ fieldset:disabled a.btn {
     line-height: 45px;
     text-align: center;
     padding: 0;
-    border-radius: 50%;
+    border-radius: 50%;     
 }
 
 .btn-circle-lg {
@@ -3092,6 +3092,10 @@ fieldset:disabled a.btn {
     height: 55px;
     line-height: 55px;
     font-size: 1.1rem;
+    /*box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);*/
+    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+    box-shadow: 5px 5px 3px rgba(0, 0, 300, .3);
+    
 }
 
 
@@ -4866,6 +4870,12 @@ input[type="button"].btn-block {
 .card-columns .card {
   margin-bottom: 0.75rem;
 }
+
+/*new style*/
+.card-shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 
 @media (min-width: 576px) {
   .card-columns {
@@ -7979,6 +7989,13 @@ button.bg-dark:focus {
 .shadow-none {
   box-shadow: none !important;
 }
+/*style new shadow*/
+.shadow-max {
+    /*box-shadow: 0 0 10px rgba(0,0,0,0.5) !important;*/
+    box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
+    padding: 50px;
+}
+
 
 .w-25 {
   width: 25% !important;

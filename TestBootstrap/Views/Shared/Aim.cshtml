@@ -10,8 +10,8 @@
 
 <div class="container-fluid m-lg-2">
     
-        <table class="table table-responsive table-striped table-hover">
-            <tr><td>Aim</td><td>StartDate</td><td>EndDate</td><td> </td></tr>
+        <table class="table table-responsive table-striped table-hover text-left">
+            <tr><td>Goal</td><td>Start Date</td><td>End Date</td><td> </td></tr>
             @foreach (var item in Model)
             {
                 <tr>
@@ -28,6 +28,6 @@
         </table>
     
 
-        <a class="btn btn-light btn-circle btn-circle-lg m-1 shadow-lg" asp-action="CreateAim"> + @*<i class="fas fa-plus"></i>*@</a>
+        <a class="btn btn-light btn-circle btn-circle-lg m-1" asp-action="CreateAim"> <img src="~/img/add.png" alt="" width="20" height="20" class="img-fluid">@*<strong>+</strong>*@ @*<i class="fas fa-plus"></i>*@</a>
     
     </div>
