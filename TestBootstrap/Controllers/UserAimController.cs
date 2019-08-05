@@ -22,20 +22,38 @@ namespace DiaryAppOlga.Controllers
         {
             return View(await db.UserAims.ToListAsync());
         }
-        //
+        
         public IActionResult CreateAim()
         {
             return View();
         }
-              
+        
+        
 
         [HttpPost]
-        public async Task<IActionResult> CreateAim(UserAim _aim)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateAim(
+        [Bind("Aim,Description,StartDate,EndDate")] UserAim _aim)
         {
-            db.UserAims.Add(_aim);
-            await db.SaveChangesAsync();
-            return RedirectToAction("Aim");
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    db.UserAims.Add(_aim);
+                    await db.SaveChangesAsync();
+                    return RedirectToAction(nameof(Aim));
+                }
+            }
+            catch (DbUpdateException /* ex */)
+            {
+                
+                ModelState.AddModelError("", "Unable to save changes. " +
+                    "Try again, and if the problem persists " +
+                    "see your system administrator.");
+            }
+            return View(_aim);
         }
+
 
         public async Task<IActionResult> DetailsAim(int? id)
         {
@@ -48,13 +66,30 @@ namespace DiaryAppOlga.Controllers
             return NotFound();
         }
 
-        //[HttpPost]
-        //public async Task<IActionResult> EditAim(UserAim aim)
+        //To do -->
+        //public async Task<IActionResult> DetailsAim(int? id)
         //{
-        //    db.UserAims.Update(aim);
-        //    await db.SaveChangesAsync();
-        //    return RedirectToAction("Index");
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    var _aim = await db.UserAims
+        //         .Include(a => a.Aim)
+        //             .ThenInclude(d => d.)
+        //         .AsNoTracking()
+        //         .FirstOrDefaultAsync(m => m.Id == id);
+
+        //    if (_aim == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return View(_aim);
         //}
+
+
+        
 
         public async Task<IActionResult> EditAim(int? id)
         {
@@ -102,7 +137,7 @@ namespace DiaryAppOlga.Controllers
         }
 
 
-        //From MS
+        
         public async Task<IActionResult> DeleteAim(int? id, bool? saveChangesError = false)
         {
             if (id == null)

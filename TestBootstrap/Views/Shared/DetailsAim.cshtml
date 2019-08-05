@@ -5,10 +5,10 @@
     ViewBag.Title = "Details";
 }
 
-  
+
 <div class="container-fluid py-lg-3 m-lg-3">
     <div class="row align-items-center h-100">
-       <card class="col-6 mx-auto">
+        <card class="col-6 mx-auto">
             <div class="card card-shadow w-100 text-center">
                 <img class="card-img-top" src="https://i0.wp.com/becomingyourself.net/wp-content/uploads/2019/01/hello-i-m-nik-698722-unsplash.jpg?resize=676%2C825&ssl=1" alt=" " width="200" height="400" @*class="img-fluid" *@>
                 <div class="card-header">
@@ -17,14 +17,37 @@
                     </h2>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">Reach until: @Html.DisplayFor(modelItem => modelItem.EndDate)</h5>
-                    <p class="card-text text-truncate">@Html.DisplayFor(modelItem => modelItem.Description)</p>
+                    <h5 class="card-title">Reach until: @Html.DisplayFor(modelItem => modelItem.EndDate)</h5>                    
+                    <button type="button" class="btn btn-outline-dark-rounded" data-toggle="modal" data-target="#exampleModalLong">
+                        Description
+                    </button>
                     <a asp-action="Aim" class="btn btn-outline-dark-rounded">Back to List</a>
                     <a asp-action="Aim" class="btn btn-outline-dark-rounded">Edit</a>
                     <a asp-action="Aim" class="btn btn-outline-dark-rounded">Delete</a>
                 </div>
             </div>
-       </card>
+        </card>       
+
+
     </div>
 </div>
 
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Description</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @Html.DisplayFor(modelItem => modelItem.Description)
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
