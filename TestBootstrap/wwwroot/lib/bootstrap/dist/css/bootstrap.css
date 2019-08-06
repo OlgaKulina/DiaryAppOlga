@@ -157,15 +157,26 @@ sup {
 }
 
 a {
-  /*color: #007bff;*/
-  text-decoration: none;
-  background-color: transparent;
+    /*color: #007bff;*/
+    text-decoration: none;
+    background-color: transparent;
+    color: #272727;
 }
 
-a:hover {
+/*a:hover {
   color: #0056b3;
   text-decoration: underline;
-}
+}*/
+
+/*//new style*/
+    a:hover {
+        color: black;
+        text-decoration: none;
+        background-color:transparent;
+    }
+
+
+
 
 a:not([href]):not([tabindex]) {
   color: inherit;

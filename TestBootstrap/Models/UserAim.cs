@@ -8,8 +8,8 @@ namespace DiaryAppOlga.Models
         public int Id { get; set; }
         public int UserId { get; set; }
 
-        //[Required(ErrorMessage = "Set aim")]
-        //[Display(Name = "Aim")]
+        //[Required(ErrorMessage = "Set your goal!")]
+        //[Display(Name = "Goal")]
         public string Aim { get; set; }
 
         public string Description { get; set; }

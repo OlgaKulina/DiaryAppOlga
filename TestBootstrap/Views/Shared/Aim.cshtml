@@ -23,11 +23,12 @@
                         <a asp-action="EditAim" asp-controller="UserAim" asp-route-id="@item.Id">Edit</a>
                         <a asp-action="DeleteAim" asp-controller="UserAim" asp-route-id="@item.Id">Delete</a>
                     </td>
+                    
                 </tr>
             }
         </table>
     
-
+    
         <a class="btn btn-light btn-circle btn-circle-lg m-1" asp-action="CreateAim"> <img src="~/img/add.png" alt="" width="20" height="20" class="img-fluid">@*<strong>+</strong>*@ @*<i class="fas fa-plus"></i>*@</a>
     
     </div>

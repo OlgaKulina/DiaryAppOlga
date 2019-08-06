@@ -1,4 +1,5 @@
 ﻿@model DiaryAppOlga.Models.UserAim
+@*@model IEnumerable<DiaryAppOlga.Models.UserAim>*@
 
 @{
 
@@ -17,37 +18,44 @@
                     </h2>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">Reach until: @Html.DisplayFor(modelItem => modelItem.EndDate)</h5>                    
+                    <h5 class="card-title">Reach until: @Html.DisplayFor(modelItem => modelItem.EndDate)</h5>
                     <button type="button" class="btn btn-outline-dark-rounded" data-toggle="modal" data-target="#exampleModalLong">
                         Description
                     </button>
+
+                    <a class="active"></a>
+                    <div class="btn btn btn-outline-dark-rounded">                  
+                    
+                    @Html.ActionLink("Edit", "EditAim", "UserAim", new { Model.Id }, null)                    
+                    </div>
+                    <div class="btn btn btn-outline-dark-rounded">@Html.ActionLink("Delete", "DeleteAim", "UserAim", new { Model.Id }, null)</div>
                     <a asp-action="Aim" class="btn btn-outline-dark-rounded">Back to List</a>
-                    <a asp-action="Aim" class="btn btn-outline-dark-rounded">Edit</a>
-                    <a asp-action="Aim" class="btn btn-outline-dark-rounded">Delete</a>
+                    @*<a asp-action="EditAim" asp-controller="UserAim" asp-route-id=""  class="btn btn-outline-dark-rounded">Edit</a>
+        <a asp-action="Aim" class="btn btn-outline-dark-rounded">Delete</a>*@
                 </div>
-            </div>
-        </card>       
+                </div>
+            </card>
 
 
+        </div>
     </div>
-</div>
 
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Description</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                @Html.DisplayFor(modelItem => modelItem.Description)
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Description</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    @Html.DisplayFor(modelItem => modelItem.Description)
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
