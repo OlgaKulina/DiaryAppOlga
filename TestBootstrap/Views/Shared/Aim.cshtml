@@ -4,14 +4,17 @@
     ViewData["Title"] = "Aim";
 }
 
-<div class="container-fluid py-lg-5 m-lg-3">
-    <h1 class="text-lg-center font-weight-light">My Goals</h1>
-</div> 
+<div class="container-fluid mt-lg-5 my-lg-5">
 
-<div class="container-fluid m-lg-2">
-    
-        <table class="table table-responsive table-striped table-hover text-left">
-            <tr><td>Goal</td><td>Start Date</td><td>End Date</td><td> </td></tr>
+    @*<div class="mx-auto" style="width: 200px;">*@
+
+        <h1 class="text-lg-center font-weight-light">My Goals</h1>
+    </div>
+
+    <div class="container m-lg-2">
+
+        <table class="table table-responsive-sm table-striped table-hover text-left">
+            <tr><td>Goal</td><td>Start Date</td><td>End Date</td><td>Actions</td></tr>
             @foreach (var item in Model)
             {
                 <tr>
@@ -19,16 +22,16 @@
                     <td>@item.StartDate</td>
                     <td>@item.EndDate </td>
                     <td>
-                        <a asp-action="DetailsAim" asp-controller="UserAim" asp-route-id="@item.Id">Details</a>
-                        <a asp-action="EditAim" asp-controller="UserAim" asp-route-id="@item.Id">Edit</a>
-                        <a asp-action="DeleteAim" asp-controller="UserAim" asp-route-id="@item.Id">Delete</a>
+                        <a asp-action="DetailsAim" asp-controller="UserAim" asp-route-id="@item.Id">@*Details*@ <i class="fas fa-info"></i></a>
+                        <a asp-action="EditAim" asp-controller="UserAim" asp-route-id="@item.Id">@*Edit*@<i class="fas fa-pencil-alt"></i></a>
+                        <a asp-action="DeleteAim" asp-controller="UserAim" asp-route-id="@item.Id">@*Delete*@<i class="far fa-trash-alt"></i></a>
                     </td>
-                    
+
                 </tr>
             }
         </table>
-    
-    
-        <a class="btn btn-light btn-circle btn-circle-lg m-1" asp-action="CreateAim"> <img src="~/img/add.png" alt="" width="20" height="20" class="img-fluid">@*<strong>+</strong>*@ @*<i class="fas fa-plus"></i>*@</a>
-    
+
+
+        <a class="btn btn-light btn-circle btn-circle-lg m-1" asp-action="CreateAim"> <i class="fas fa-plus"></i> @*<img src="~/img/add.png" alt="" width="20" height="20" class="img-fluid">*@@*<strong>+</strong>*@ @*<i class="fas fa-plus"></i>*@</a>
+
     </div>
