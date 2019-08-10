@@ -62,9 +62,14 @@ body {
     line-height: 1.5;
     color: #212529;
     text-align: left;
-    background:#FF7F50; 
+    background: #FF7F50;
     /*background: #f46756;*/
     /*background-image: url('https://source.unsplash.com/BtbjCFUvBXs/1920x1080');*/
+    background: url('https://source.unsplash.com/twukN12EN7c/1920x1080') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }
 
 [tabindex="-1"]:focus {
