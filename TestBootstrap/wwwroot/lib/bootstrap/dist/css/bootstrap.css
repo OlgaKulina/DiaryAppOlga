@@ -65,7 +65,9 @@ body {
     background: #FF7F50;
     /*background: #f46756;*/
     /*background-image: url('https://source.unsplash.com/BtbjCFUvBXs/1920x1080');*/
-    background: url('https://source.unsplash.com/twukN12EN7c/1920x1080') no-repeat center center fixed;
+    /*background: url('https://source.unsplash.com/twukN12EN7c/1920x1080') no-repeat center center fixed;*/
+    background: url('https://www.wallpaperflare.com/static/407/202/364/aerial-photography-mountains-sunrise-fog-wallpaper-preview.jpg') no-repeat center center fixed;
+    
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
