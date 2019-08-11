@@ -7,9 +7,9 @@
 }
 
 
-<div class="container-fluid py-lg-3 m-lg-3">
+<div class="container-fluid justify-content-center py-lg-3 m-lg-3">
     <div class="row align-items-center h-100">
-        <card class="col-6 mx-auto">
+        <card class="col-sm-6">
             <div class="card card-shadow w-100 text-center">
                 <img class="card-img-top" src="https://i0.wp.com/becomingyourself.net/wp-content/uploads/2019/01/hello-i-m-nik-698722-unsplash.jpg?resize=676%2C825&ssl=1" alt=" " width="200" height="400" @*class="img-fluid" *@>
                 <div class="card-header">
@@ -19,6 +19,9 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Reach until: @Html.DisplayFor(modelItem => modelItem.EndDate)</h5>
+                    
+                    <a asp-action="Aim" class="btn btn-outline-dark-rounded"><i class="fas fa-arrow-left"></i>@*Back to List*@</a>
+
                     <button type="button" class="btn btn-outline-dark-rounded" data-toggle="modal" data-target="#exampleModalLong">
                         Description
                     </button>
@@ -29,7 +32,7 @@
                     @Html.ActionLink("Edit", "EditAim", "UserAim", new { Model.Id }, null)                    
                     </div>
                     <div class="btn btn btn-outline-dark-rounded">@Html.ActionLink("Delete", "DeleteAim", "UserAim", new { Model.Id }, null)</div>
-                    <a asp-action="Aim" class="btn btn-outline-dark-rounded">Back to List</a>
+                    
                     @*<a asp-action="EditAim" asp-controller="UserAim" asp-route-id=""  class="btn btn-outline-dark-rounded">Edit</a>
         <a asp-action="Aim" class="btn btn-outline-dark-rounded">Delete</a>*@
                 </div>

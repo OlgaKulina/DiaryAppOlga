@@ -13,12 +13,12 @@
 
     <div class="container m-lg-2">
 
-        <table class="table table-responsive-sm table-striped table-hover text-left">
+        <table class="table table-responsive-sm table-warning table-striped table-hover table-borderless text-left shadow-max">
             <tr><td>Goal</td><td>Start Date</td><td>End Date</td><td>Actions</td></tr>
             @foreach (var item in Model)
             {
                 <tr>
-                    <td>@item.Aim</td>
+                    <td> <a asp-action="DetailsAim" asp-controller="UserAim" asp-route-id="@item.Id">@item.Aim</a> </td>
                     <td>@item.StartDate</td>
                     <td>@item.EndDate </td>
                     <td>
