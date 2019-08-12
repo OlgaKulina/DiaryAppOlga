@@ -12,10 +12,13 @@
 </div>
 
 <p class="text-danger">@ViewData["ErrorMessage"]</p>
-<h3 class="text-danger text-md-center">Are you sure you want to delete your goal?</h3>
-<h4 class="text-danger text-md-center">Note that you cannot undo a deletion!</h4>
-    <div class="container-fluid w-75">
-        <hr />
+<div class="card card-shadow justify-content-center w-75">
+    <div class="card-header">
+        <h3 class="text-danger text-md-center">Are you sure you want to delete your goal?</h3>
+        <h4 class="text-danger text-md-center">Note that you cannot undo a deletion!</h4>
+    </div>
+    @*<div class="container-fluid w-75">*@
+       <div class="card-body justify-content-sm-center">
         <dl class="row">
             <dt class="col-sm-2">
                 @Html.DisplayName("Goal")
@@ -31,10 +34,12 @@
             </dd>
 
         </dl>
-
+       </div>
+    <div class="card-footer">
         <form asp-action="Delete" class="text-md-center">
             <input type="hidden" asp-for="Id" />
             <input type="submit" value="Delete" class="btn btn-outline-dark-rounded bg-danger" /> |
             <a asp-action="Aim" class="btn btn-outline-dark-rounded bg-light">No</a>
         </form>
+    </div>
     </div>
