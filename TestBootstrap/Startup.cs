@@ -37,12 +37,12 @@ namespace DiaryAppOlga
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddDbContext<ApplicationIdentityDbContext> (options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>()
+            services.AddDefaultIdentity<ApplicationUser>()
                 .AddDefaultUI(UIFramework.Bootstrap4)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                .AddEntityFrameworkStores<ApplicationIdentityDbContext>();
 
 
             //services.AddEntityFrameworkSqlServer()
@@ -83,6 +83,11 @@ namespace DiaryAppOlga
                     name: "default",
                     template: "UserAim",
                     defaults: new { controller = "UserAim", action = "Aim" });
+
+                //routes.MapRoute(
+                //    name: "default",
+                //    template: "Admin",
+                //    defaults: new { controller = "Admin", action = "Aim" });
 
 
                 routes.MapRoute(

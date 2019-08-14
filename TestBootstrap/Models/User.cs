@@ -5,7 +5,7 @@ namespace DiaryAppOlga.Models
 {
     public class User
     {
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         [Required]
         public string LoginId { get; set; }
         [Required]
