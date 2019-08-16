@@ -39,10 +39,11 @@ namespace DiaryAppOlga
 
             services.AddDbContext<ApplicationIdentityDbContext> (options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<ApplicationUser>()
+                    Configuration.GetConnectionString("IdentityUsersConnection")));
+            services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddDefaultUI(UIFramework.Bootstrap4)
-                .AddEntityFrameworkStores<ApplicationIdentityDbContext>();
+                .AddEntityFrameworkStores<ApplicationIdentityDbContext>()
+                .AddDefaultTokenProviders();
 
 
             //services.AddEntityFrameworkSqlServer()
@@ -54,6 +55,11 @@ namespace DiaryAppOlga
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+        }
+        //To do
+        private void AddDefaultTokenProviders()
+        {
+            throw new NotImplementedException();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

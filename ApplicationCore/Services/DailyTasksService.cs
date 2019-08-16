@@ -16,5 +16,10 @@ namespace Microsoft.DiaryAppOlga.ApplicationCore.Services
         {
             throw new NotImplementedException();
         }
+
+        public Task DeleteDailyTaskAsync(int dailyTaskId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -4,19 +4,19 @@ using DiaryAppOlga.Models;
 
 namespace DiaryAppOlga.Data
 {
-    public class ApplicationIdentityDbContext : IdentityDbContext<ApplicationUser>
-    {
-        public ApplicationIdentityDbContext(DbContextOptions<ApplicationIdentityDbContext> options)
-            : base(options)
-        {
-        }
+    //public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    //{
+    //    public ApplicationDbContext(DbContextOptions<ApplicationIdentityDbContext> options)
+    //        : base(options)
+    //    {
+    //    }
 
-        //protected override void OnModelCreating(ModelBuilder builder)
-        //{
-        //    base.OnModelCreating(builder);
+    //    //protected override void OnModelCreating(ModelBuilder builder)
+    //    //{
+    //    //    base.OnModelCreating(builder);
            
-        //}
-    }
+    //    //}
+    //}
 
 
 
