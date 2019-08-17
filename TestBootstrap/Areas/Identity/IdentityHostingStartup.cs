@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using DiaryAppOlga.Data;
+using DiaryAppOlga.Models;
 
 [assembly: HostingStartup(typeof(DiaryAppOlga.Areas.Identity.IdentityHostingStartup))]
 namespace DiaryAppOlga.Areas.Identity
