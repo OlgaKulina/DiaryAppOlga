@@ -40,15 +40,21 @@ namespace DiaryAppOlga
             services.AddDbContext<ApplicationIdentityDbContext> (options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("IdentityUsersConnection")));
-            services.AddIdentity<ApplicationUser, IdentityRole>()
+            services.AddIdentity<ApplicationUser, IdentityRole>(opts=> {
+                opts.Password.RequiredLength = 9;
+                opts.Password.RequireNonAlphanumeric = true;
+                opts.Password.RequireLowercase = true;
+                opts.Password.RequireUppercase = true;
+                opts.Password.RequireDigit = true;
+
+                opts.User.RequireUniqueEmail = true;
+            })
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<ApplicationIdentityDbContext>()
                 .AddDefaultTokenProviders();
 
 
-            //services.AddEntityFrameworkSqlServer()
-            //    .AddDbContext<UserAimContext>(options=>
-            //    options.UseSqlServer(Configuration.GetConnectionString("UserAimConnection")));
+            
 
             services.AddDbContext<UserAimContext>(options =>
                options.UseSqlServer(Configuration.GetConnectionString("UserAimConnection")));
