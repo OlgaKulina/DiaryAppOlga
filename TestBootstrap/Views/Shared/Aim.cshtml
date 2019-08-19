@@ -14,24 +14,34 @@
     <div class="container m-lg-2">
 
         <table class="table table-responsive-sm table-warning table-striped table-hover table-borderless text-left card-shadow">
-            <tr><td>Goal</td><td>Start Date</td><td>End Date</td><td>Actions</td></tr>
-            @foreach (var item in Model)
-            {
+            <thead>
                 <tr>
-                    <td> <a asp-action="DetailsAim" asp-controller="UserAim" asp-route-id="@item.Id">@item.Aim</a> </td>
-                    <td>@item.StartDate</td>
-                    <td>@item.EndDate </td>
-                    <td>
-                        <a asp-action="DetailsAim" asp-controller="UserAim" asp-route-id="@item.Id">@*Details*@ <i class="fas fa-info"> &nbsp;</i></a>
-                        <a asp-action="EditAim" asp-controller="UserAim" asp-route-id="@item.Id">@*Edit*@<i class="fas fa-pencil-alt"> &nbsp;</i></a>
-                        <a asp-action="DeleteAim" asp-controller="UserAim" asp-route-id="@item.Id">@*Delete*@<i class="far fa-trash-alt">&nbsp;</i></a>
-                    </td>
-
+                    <th scope="col">Goals</th>
+                    <th scope="col">Start date</th>
+                    <th scope="col">End date</th>
+                    <th scope="col">Actions</th>
                 </tr>
-            }
+            </thead>            
+               
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td> <a asp-action="DetailsAim" asp-controller="UserAim" asp-route-id="@item.Id">@item.Aim</a> </td>
+                        <td>@item.StartDate</td>
+                        <td>@item.EndDate </td>
+                        <td>
+                            <a asp-action="DetailsAim" asp-controller="UserAim" asp-route-id="@item.Id">@*Details*@ <i class="fas fa-info"> &nbsp;</i></a>
+                            <a asp-action="EditAim" asp-controller="UserAim" asp-route-id="@item.Id">@*Edit*@<i class="fas fa-pencil-alt"> &nbsp;</i></a>
+                            <a asp-action="DeleteAim" asp-controller="UserAim" asp-route-id="@item.Id">@*Delete*@<i class="far fa-trash-alt">&nbsp;</i></a>
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
         </table>
 
 
-        <a class="btn btn-light btn-circle btn-circle-lg m-1" asp-action="CreateAim"> <i class="fas fa-plus"></i> @*<img src="~/img/add.png" alt="" width="20" height="20" class="img-fluid">*@@*<strong>+</strong>*@ @*<i class="fas fa-plus"></i>*@</a>
+        <a class="btn btn-warning btn-circle btn-circle-lg btn-fix @*m-1*@" asp-action="CreateAim"><i class="fas fa-plus"></i></a>
 
     </div>

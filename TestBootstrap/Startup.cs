@@ -15,6 +15,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using DiaryAppOlga.Models;
+using DiaryAppOlga.Middleware;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
 
 namespace DiaryAppOlga
 {
@@ -30,6 +33,19 @@ namespace DiaryAppOlga
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<RequestLocalizationOptions>(options =>
+            {
+                options.DefaultRequestCulture = new RequestCulture("en-US");
+                //By default the below will be set to whatever the server culture is.  
+                options.SupportedCultures = new List<CultureInfo> { new CultureInfo("en-US") };
+                //options.SupportedCultures = new List<Calendar> { new Calendar() };             
+                options.RequestCultureProviders = new List<IRequestCultureProvider>();
+                
+            });
+
+
+
+
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -60,6 +76,9 @@ namespace DiaryAppOlga
                options.UseSqlServer(Configuration.GetConnectionString("UserAimConnection")));
 
 
+            
+
+            
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
         //To do
@@ -71,6 +90,8 @@ namespace DiaryAppOlga
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+                       
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -84,10 +105,13 @@ namespace DiaryAppOlga
             }
 
             app.UseHttpsRedirection();
+            //app.UseCulture();
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
             app.UseAuthentication();
+
+            app.UseRequestLocalization();
 
             app.UseMvc(routes =>
             {
@@ -104,14 +128,12 @@ namespace DiaryAppOlga
 
                 routes.MapRoute(
                     name: "default1",
-                    template: "{controller=Home}/{action=Index}/{id?}");
-
-
-                
-
-
-
+                    template: "{controller=Home}/{action=Index}/{id?}");        
+                                
             });
+
+            //ApplicationIdentityDbContext.CreateAdminAccount(app.ApplicationServices,
+            //    Configuration).Wait();
         }
     }
 }

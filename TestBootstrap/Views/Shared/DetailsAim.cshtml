@@ -19,22 +19,21 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Reach until: @Html.DisplayFor(modelItem => modelItem.EndDate)</h5>
-                    
-                    <a asp-action="Aim" class="btn btn-outline-dark-rounded"><i class="fas fa-arrow-left"></i>@*Back to List*@</a>
+                    @*Back to List*@
+                    <a asp-action="Aim" class="btn btn-outline-dark-rounded">&nbsp;&nbsp;<i class="fas fa-backward"></i>&nbsp;&nbsp;</a>
 
                     <button type="button" class="btn btn-outline-dark-rounded" data-toggle="modal" data-target="#exampleModalLong">
                         Description
                     </button>
 
-                   
-                    <div class="btn btn btn-outline-dark-rounded">               
-                    
-                    @Html.ActionLink("Edit", "EditAim", "UserAim", new { Model.Id }, null)                    
+
+                    <div class="btn btn btn-outline-dark-rounded">
+
+                        @Html.ActionLink("Edit", "EditAim", "UserAim", new { Model.Id }, null)
                     </div>
                     <div class="btn btn btn-outline-dark-rounded">@Html.ActionLink("Delete", "DeleteAim", "UserAim", new { Model.Id }, null)</div>
+
                     
-                    @*<a asp-action="EditAim" asp-controller="UserAim" asp-route-id=""  class="btn btn-outline-dark-rounded">Edit</a>
-        <a asp-action="Aim" class="btn btn-outline-dark-rounded">Delete</a>*@
                 </div>
                 </div>
             </card>
@@ -57,7 +56,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-dark-rounded" data-dismiss="modal">Close</button>
-                    @*<button type="button" class="btn btn-primary">Save changes</button>*@
+                    
                 </div>
             </div>
         </div>

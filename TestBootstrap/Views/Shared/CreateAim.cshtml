@@ -1,70 +1,63 @@
-﻿@model DiaryAppOlga.Models.UserAim
+﻿@using System.Globalization
+@using Microsoft.AspNetCore.Localization
+@model DiaryAppOlga.Models.UserAim
 
 @{
     ViewBag.Title = "Set your goal";
- }
-<header class="page-header header container-fluid py-lg-5 mr-lg-5">
-    <div class="container py-lg-5 mr-lg-5">
-        <div class="row">
-            <div class="col-md-6">
-                <h1 class="text-lg-left font-weight-light">   </h1>
+
+}
+
+<div class="container-fluid py-lg-3 m-lg-3">
+    <h1 class="text-lg-left font-weight-light">Set a goal</h1>
+</div>
+<hr />
+<div class="row">
+
+    <div class="col-md-6">
+        <form asp-action="create" asp-controller="UserAim">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserId" class="control-label"></label>
+                <input asp-for="UserId" class="form-control" />
+                <span asp-validation-for="UserId" class="text-danger"></span>
             </div>
-            <div class="col-md-6">
-                <h1 class="text-lg-left font-weight-light">   </h1>
+            <div class="form-group">
+
+
+                <label asp-for="Aim" class="control-label">Goal</label>
+                <input asp-for="Aim" class="form-control" />
+                <span asp-validation-for="Aim" class="text-danger"></span>
             </div>
-        </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                @*<input asp-for="Description" class="form-control" />*@
+                <textarea class="form-control" input asp-for="Description" cols="5"> </textarea>
+
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartDate" class="control-label"></label>
+                <input asp-for="StartDate"  class="form-control" />
+                
+                @*@Model.CalendarOptions.DefaultDate.ToString("dd/MM/yyyy")*@
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndDate" class="control-label"></label>
+                <input asp-for="EndDate" class="form-control" />
+                <span asp-validation-for="EndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-outline-dark-rounded bg-light" />
+            </div>
+        </form>
     </div>
-</header>
-    
+</div>
+@*back to list*@
+<div>
+    <a asp-action="Aim" class="btn btn-outline-dark-rounded bg-light">&nbsp;&nbsp;<i class="fas fa-backward"></i>&nbsp;&nbsp;</a>
+</div>
 
-    <div class="row">
-        <div class="col-md-6">
-            <h1 class="text-lg-left font-weight-light">Set a goal</h1>
-            <hr />
-            @*</div>
-        <div class="col-md-6">*@
-            <form asp-action="create" asp-controller="UserAim">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-group">
-                    <label asp-for="UserId" class="control-label"></label>
-                    <input asp-for="UserId" class="form-control" />
-                    <span asp-validation-for="UserId" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-
-
-                    <label asp-for="Aim" class="control-label">Goal</label>
-                    <input asp-for="Aim" class="form-control" />
-                    <span asp-validation-for="Aim" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Description" class="control-label"></label>
-                    @*<input asp-for="Description" class="form-control" />*@
-                    <textarea class="form-control" input asp-for="Description" cols="5"> </textarea>
-
-                    <span asp-validation-for="Description" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="StartDate" class="control-label"></label>
-                    <input asp-for="StartDate" class="form-control" />
-                    <span asp-validation-for="StartDate" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="EndDate" class="control-label"></label>
-                    <input asp-for="EndDate" class="form-control" />
-                    <span asp-validation-for="EndDate" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-outline-dark-rounded bg-light" />
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <div>
-        <a asp-action="Aim" class="btn btn-outline-dark-rounded bg-light">@*Back to List*@&nbsp;<i class="fas fa-reply"></i>&nbsp;&nbsp;</a>
-    </div>
-
-    @section Scripts {
-        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    }
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
