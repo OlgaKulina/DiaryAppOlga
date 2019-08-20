@@ -7,10 +7,10 @@ namespace DiaryAppOlga.Models
     //1
     public class UserAimContext : IdentityDbContext
     //2
-        //public class UserAimContext : IdentityDbContext<ApplicationUser>
+    //public class UserAimContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<UserAim> UserAims { get; set; }
-        
+        //public DbSet<User> _Users { get; set; }
 
         public UserAimContext(DbContextOptions<UserAimContext> options)
             : base(options)

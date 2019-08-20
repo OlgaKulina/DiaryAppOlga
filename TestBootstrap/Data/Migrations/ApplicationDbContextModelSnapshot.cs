@@ -26,6 +26,8 @@ namespace DiaryAppOlga.Data.Migrations
 
                     b.Property<int>("AccessFailedCount");
 
+                    b.Property<int>("Age");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
 
@@ -37,6 +39,8 @@ namespace DiaryAppOlga.Data.Migrations
                     b.Property<bool>("LockoutEnabled");
 
                     b.Property<DateTimeOffset?>("LockoutEnd");
+
+                    b.Property<string>("Name");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256);

@@ -40,6 +40,18 @@ namespace DiaryAppOlga.Areas.Identity.Pages.Account
 
         public class InputModel
         {
+            [Required(ErrorMessage = "Name Required")]
+            [DataType(DataType.Text)]
+            [Display(Name = "Name")]
+            [StringLength(30, MinimumLength = 3, ErrorMessage = "Name length must be between 3 and 30 characters!")]
+            public string Name { get; set; }
+
+
+            [Range(7, 110, ErrorMessage = "Age must be between 7 and 110!")]
+            [Display(Name = "Age")]
+            public int Age { get; set; }
+
+                                                         
             [Required]
             [EmailAddress]
             [Display(Name = "Email")]
@@ -67,7 +79,13 @@ namespace DiaryAppOlga.Areas.Identity.Pages.Account
             returnUrl = returnUrl ?? Url.Content("~/");
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = Input.Email, Email = Input.Email };
+                var user = new ApplicationUser
+                {
+                    Name = Input.Name,
+                    Age = Input.Age,
+                    UserName = Input.Email,
+                    Email = Input.Email
+                };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {

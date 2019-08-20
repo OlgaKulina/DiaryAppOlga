@@ -12,6 +12,7 @@ namespace DiaryAppOlga.Controllers
     public class UserAimController : Controller
     {
         private UserAimContext db;
+        //private ApplicationUser user;
 
         public UserAimController(UserAimContext context)
         {

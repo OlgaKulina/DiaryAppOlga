@@ -4,14 +4,16 @@ using DiaryAppOlga.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DiaryAppOlga.Migrations
 {
     [DbContext(typeof(UserAimContext))]
-    partial class UserAimContextModelSnapshot : ModelSnapshot
+    [Migration("20190820115101_5Migration")]
+    partial class _5Migration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

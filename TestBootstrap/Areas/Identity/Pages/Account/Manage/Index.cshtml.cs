@@ -40,8 +40,21 @@ namespace DiaryAppOlga.Areas.Identity.Pages.Account.Manage
 
         public class InputModel
         {
-            [Required]
-            [EmailAddress]
+            [Required(ErrorMessage ="Name Required")]
+            [DataType(DataType.Text)]
+            [Display(Name = "Name")]
+            [StringLength(30, MinimumLength = 3, ErrorMessage = "Name length must be between 3 and 30 characters!")]
+            public string Name { get; set; }
+
+
+            [Range(7, 110, ErrorMessage = "Age must be between 7 and 110!")]
+            [Display(Name = "Age")]            
+            public int Age { get; set; }
+            
+
+            [Required(ErrorMessage ="Email Required")]
+            [Display(Name = "Email")]
+            [EmailAddress(ErrorMessage ="Not a valid email")]
             public string Email { get; set; }
 
             [Phone]
@@ -65,6 +78,8 @@ namespace DiaryAppOlga.Areas.Identity.Pages.Account.Manage
 
             Input = new InputModel
             {
+                Name = user.Name,
+                Age = user.Age,
                 Email = email,
                 PhoneNumber = phoneNumber
             };
@@ -97,6 +112,17 @@ namespace DiaryAppOlga.Areas.Identity.Pages.Account.Manage
                     throw new InvalidOperationException($"Unexpected error occurred setting email for user with ID '{userId}'.");
                 }
             }
+            //Added new fields: Name and Age
+            if (Input.Name != user.Name)
+            {
+                user.Name = Input.Name;
+            }
+
+            if (Input.Age != user.Age)
+            {
+                user.Age = Input.Age;
+            }
+
 
             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
             if (Input.PhoneNumber != phoneNumber)
@@ -108,6 +134,8 @@ namespace DiaryAppOlga.Areas.Identity.Pages.Account.Manage
                     throw new InvalidOperationException($"Unexpected error occurred setting phone number for user with ID '{userId}'.");
                 }
             }
+
+            await _userManager.UpdateAsync(user);
 
             await _signInManager.RefreshSignInAsync(user);
             StatusMessage = "Your profile has been updated";

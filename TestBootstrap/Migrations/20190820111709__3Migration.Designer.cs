@@ -4,20 +4,47 @@ using DiaryAppOlga.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DiaryAppOlga.Migrations
 {
     [DbContext(typeof(UserAimContext))]
-    partial class UserAimContextModelSnapshot : ModelSnapshot
+    [Migration("20190820111709__3Migration")]
+    partial class _3Migration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("DiaryAppOlga.Models.User", b =>
+                {
+                    b.Property<string>("UserId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("Age");
+
+                    b.Property<string>("Email");
+
+                    b.Property<string>("LoginId")
+                        .IsRequired();
+
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.Property<string>("Password_Id")
+                        .IsRequired();
+
+                    b.Property<int>("Phone");
+
+                    b.HasKey("UserId");
+
+                    b.ToTable("User");
+                });
 
             modelBuilder.Entity("DiaryAppOlga.Models.UserAim", b =>
                 {
@@ -36,9 +63,13 @@ namespace DiaryAppOlga.Migrations
 
                     b.Property<bool>("Status");
 
-                    b.Property<string>("UserId");
+                    b.Property<int>("UserId");
+
+                    b.Property<string>("UserId1");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId1");
 
                     b.ToTable("UserAims");
                 });
@@ -202,6 +233,13 @@ namespace DiaryAppOlga.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("DiaryAppOlga.Models.UserAim", b =>
+                {
+                    b.HasOne("DiaryAppOlga.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId1");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

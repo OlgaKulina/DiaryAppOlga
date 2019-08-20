@@ -7,13 +7,12 @@ namespace DiaryAppOlga.Models
     {
         public int Id { get; set; }
 
-        public int UserId { get; set; }
+        //public int UserId { get; set; }
 
+        public string UserId { get; set; }
 
-        //public string UserId { get; set; }
-
-        //[Required(ErrorMessage = "Set your goal!")]
-        //[Display(Name = "Goal")]
+        [Required(ErrorMessage = "Set your goal!")]
+        [Display(Name = "Goal")]
         public string Aim { get; set; }
 
         public string Description { get; set; }
@@ -26,6 +25,8 @@ namespace DiaryAppOlga.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime EndDate { get; set;}
 
+        public bool Status { get; set; }
 
+        
     }
 }
