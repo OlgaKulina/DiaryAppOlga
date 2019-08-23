@@ -2,7 +2,7 @@
 
 namespace DiaryAppOlga.Models
 {
-    public class DailyTasks
+    public class DailyTask
     {
         public int UserTask_Id { get; set; }
         public int DailyTasks_Id { get; set; }

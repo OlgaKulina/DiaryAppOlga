@@ -1,4 +1,4 @@
-﻿
+﻿using System.Collections.Generic;
 
 namespace DiaryAppOlga.Models
 {
@@ -8,8 +8,19 @@ namespace DiaryAppOlga.Models
        
         public int Grade_Id { get; set; }
         public string GradeName { get; set; }
-        public string Text { get; set; }
-
-
+        
+        
+        static IEnumerable<Grade> GetPreconfiguredGrades()
+        {
+            return new List<Grade>()
+            {
+                new Grade(){ GradeName="5"},
+                new Grade(){ GradeName="4"},
+                new Grade(){ GradeName="3"},
+                new Grade(){ GradeName="2"},
+                new Grade(){ GradeName="1"}
+            };
+        }
+        
     }
 }

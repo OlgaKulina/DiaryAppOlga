@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace DiaryAppOlga.Models
 {
-    public class WeeklyTasks
+    public class WeeklyTask
     {
         public int UserTask_Id { get; set; }
         public int WeeklyTasks_Id { get; set; }
