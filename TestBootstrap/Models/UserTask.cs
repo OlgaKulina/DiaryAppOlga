@@ -9,7 +9,9 @@ namespace DiaryAppOlga.Models
         //public string UserId { get; set; }
 
 
-        public int UserTask_Id { get; set; }
+        public int Id { get; set; }
+
+        
 
         [Required(ErrorMessage = "Set a task.")]
         [Display(Name = "Task")]                     
@@ -22,14 +24,14 @@ namespace DiaryAppOlga.Models
         public string Description { get; set; }
 
 
-        [Required(ErrorMessage = "Set a priority for the task!")]
-        [Display(Name = "Priority")]
-        public Priority Priority { get; set; }
+        //[Required(ErrorMessage = "Set a priority for the task!")]
+        //[Display(Name = "Priority")]
+        //public Priority Priority { get; set; }
 
         public bool Status { get; private set; }
 
         
-        public Grade Grade { get; set; }
+       // public Grade Grade { get; set; }
 
 
     }

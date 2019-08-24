@@ -15,9 +15,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using DiaryAppOlga.Models;
-using DiaryAppOlga.Middleware;
 using System.Globalization;
 using Microsoft.AspNetCore.Localization;
+using DiaryAppOlga.Repository;
 
 namespace DiaryAppOlga
 {
@@ -33,14 +33,12 @@ namespace DiaryAppOlga
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Set Culture
             services.Configure<RequestLocalizationOptions>(options =>
             {
-                options.DefaultRequestCulture = new RequestCulture("en-US");
-                //By default the below will be set to whatever the server culture is.  
-                options.SupportedCultures = new List<CultureInfo> { new CultureInfo("en-US") };
-                //options.SupportedCultures = new List<Calendar> { new Calendar() };             
-                options.RequestCultureProviders = new List<IRequestCultureProvider>();
-                
+                options.DefaultRequestCulture = new RequestCulture("en-US");                
+                options.SupportedCultures = new List<CultureInfo> { new CultureInfo("en-US") };                            
+                options.RequestCultureProviders = new List<IRequestCultureProvider>();                
             });
 
 
@@ -69,18 +67,23 @@ namespace DiaryAppOlga
                 .AddEntityFrameworkStores<ApplicationIdentityDbContext>()
                 .AddDefaultTokenProviders();
 
-
-            
+                       
 
             services.AddDbContext<UserAimContext>(options =>
                options.UseSqlServer(Configuration.GetConnectionString("UserAimConnection")));
 
-
             
+            services.AddTransient<IRepository, ScheduleRepository>();
+            services.AddDbContext<ScheduleContext>(options =>
+              options.UseSqlServer(Configuration.GetConnectionString("ScheduleConnection")));
 
             
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            
         }
+
+
+
         //To do
         private void AddDefaultTokenProviders()
         {
@@ -104,8 +107,7 @@ namespace DiaryAppOlga
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
-            //app.UseCulture();
+            app.UseHttpsRedirection();            
             app.UseStaticFiles();
             app.UseCookiePolicy();
 

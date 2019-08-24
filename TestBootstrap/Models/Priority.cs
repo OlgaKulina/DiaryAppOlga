@@ -9,7 +9,7 @@ namespace DiaryAppOlga.Models
         public int Priority_Id { get; set; }
         public string PriorityName { get; set; }
 
-        static IEnumerable<Priority> GetPreconfiguredPriorities()
+        static IEnumerable<Priority> GetPriorities()
         {
             return new List<Priority>()
             {

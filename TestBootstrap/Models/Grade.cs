@@ -10,7 +10,7 @@ namespace DiaryAppOlga.Models
         public string GradeName { get; set; }
         
         
-        static IEnumerable<Grade> GetPreconfiguredGrades()
+        static IEnumerable<Grade> GetGrades()
         {
             return new List<Grade>()
             {

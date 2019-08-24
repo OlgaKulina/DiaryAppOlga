@@ -1,9 +1,10 @@
-﻿
+﻿@model IEnumerable<UserTask>
+
 @{
     ViewData["Title"] = "MonthlyTasks";
 }
-<div class="container-fluid mt-lg-5 my-lg-5">
-      
+@*<div class="container-fluid mt-lg-5 my-lg-5">
+
     <h1 class="text-lg-center font-weight-light">Monthly Tasks</h1>
     <h2 class="text-lg-center"><span class="badge badge-pill badge-light">05/09-30/09/19</span></h2>
     </div>
@@ -21,5 +22,64 @@
             </thead>
 
             <tbody></tbody>
+
         </table>
+    </div>*@
+
+
+
+<h3 class="p-2 bg-primary font-weight-light text-center">Monthly Tasks</h3>
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col font-weight-bold">Id</div>
+        <div class="col font-weight-bold">Tasks</div>
+        <div class="col font-weight-bold">Description</div>
+        @*<div class="col font-weight-bold">Priority</div>*@
+        @*<div class="col font-weight-bold text-right">Status</div>
+        <div class="col font-weight-bold text-right">Grade</div>*@
+        @*<div class="col"></div>*@
     </div>
+    <form asp-action="AddUserTask" method="post">
+        <div class="row p-2">
+            <div class="col-1"></div>
+                <div class="col"><input name="TaskName" class="form-control" /></div>
+                <div class="col"><input name="Description" class="form-control" /></div>
+                @*<div class="col"><input name="Priority" class="form-control" /></div>*@
+                @*<div class="col">
+                <input name="Status" class="form-control" />
+            </div>*@
+                <div class="col">
+                    <button type="submit" class="btn btn-warning btn-circle btn-circle-lg"><i class="fas fa-plus"></i>@*Add*@</button>
+                </div>
+            </div>
+</form>
+    <div>
+        @if (Model.Count() == 0)
+        {
+            <div class="row">
+                <div class="col text-center p-2">No tasks yet</div>
+            </div>
+        }
+        else
+        {
+            @foreach (UserTask item in Model)
+            {
+            <div class="row p-2">
+                <div class="col-1">@item.Id</div>
+                <div class="col">@item.TaskName</div>
+                <div class="col">@item.Description</div>
+                @*<div class="col text-right">@item.Priority</div>*@
+                @*<div class="col text-right">@item.Status</div>*@
+                <div class="col">
+                    <form asp-action="DeleteUserTask" method="post">
+                    <a asp-action="UpdateUserTask" asp-route-key="@item.Id"
+                    class="btn btn-outline-dark-rounded bg-light"><i class="fas fa-pencil-alt"></i>@*Edit*@</a>
+                        <input type="hidden" name="Id" value="@item.Id"/>
+                        <button type="submit" class="btn btn-outline-dark-rounded bg-danger">@*Delete*@<i class="far fa-trash-alt"></i></button>
+                        </form>
+                </div>
+            </div>
+            }
+        }
+    </div>
+</div>
