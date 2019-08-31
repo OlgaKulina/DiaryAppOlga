@@ -14,11 +14,9 @@ namespace DiaryAppOlga.Models
         public ScheduleContext(DbContextOptions<ScheduleContext> options)
             : base(options)
         { }
-        //public DbSet<ScheduleItem> ScheduleItems { get; set; }
-        //public DbSet<MonthlyTask> MonthlyTasks { get; set; }
+        
         public DbSet<UserTask> UserTasks { get; set; }
-        //public DbSet<Priority> Priorities { get; set; }
-        //public DbSet<Grade> Grades { get; set; }
+        
 
         //Database.EnsureCreated();
         }
