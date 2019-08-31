@@ -14,10 +14,10 @@ namespace DiaryAppOlga.Models
         {
             return new List<WeekNumber> ()
             {
-             new WeekNumber() { WeekNumberName ="First"},
-             new WeekNumber() { WeekNumberName = "Second"},
-             new WeekNumber() { WeekNumberName = "Third"},
-             new WeekNumber() { WeekNumberName = "Third"}
+             new WeekNumber() { WeekNumberName = "First week:"},
+             new WeekNumber() { WeekNumberName = "Second week:"},
+             new WeekNumber() { WeekNumberName = "Third week:"},
+             new WeekNumber() { WeekNumberName = "Fourth week:"}
             };
         }
 

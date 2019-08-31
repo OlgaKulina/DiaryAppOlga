@@ -2,15 +2,18 @@
 
 namespace DiaryAppOlga.Models
 {
+    //public enum Priorities
+    //{
+    //    High, Medium, Low
+    //}
+
     public class UserTask
     {
 
         //???
-        //public string UserId { get; set; }
-
-
+        //public string UserId { get; set; }     
+               
         public int Id { get; set; }
-
         
 
         [Required(ErrorMessage = "Set a task.")]
@@ -30,8 +33,12 @@ namespace DiaryAppOlga.Models
 
         public bool Status { get; private set; }
 
-        
-       // public Grade Grade { get; set; }
+        //[Required(ErrorMessage = "Set a priority for the task!")]
+        //[Display(Name = "Priority")]
+        //public Priorities? Priorities { get; set; }
+
+
+        // public Grade Grade { get; set; }
 
 
     }

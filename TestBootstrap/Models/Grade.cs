@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Resources;
 
 namespace DiaryAppOlga.Models
 {
@@ -8,13 +9,13 @@ namespace DiaryAppOlga.Models
        
         public int Grade_Id { get; set; }
         public string GradeName { get; set; }
-        
-        
+        public byte Smile { get; private set; }
+
         static IEnumerable<Grade> GetGrades()
         {
             return new List<Grade>()
             {
-                new Grade(){ GradeName="5"},
+                new Grade(){ GradeName="5",},
                 new Grade(){ GradeName="4"},
                 new Grade(){ GradeName="3"},
                 new Grade(){ GradeName="2"},

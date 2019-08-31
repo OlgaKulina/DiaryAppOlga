@@ -16,7 +16,10 @@ namespace DiaryAppOlga.Models
         { }
         
         public DbSet<UserTask> UserTasks { get; set; }
-        
+        //public DbSet<MonthlyTask> MonthlyTasks { get; set; }
+        //public DbSet<WeeklyTask> WeeklyTasks { get; set; }
+        //public DbSet<DailyTask> DailyTasks { get; set; }
+
 
         //Database.EnsureCreated();
         }
