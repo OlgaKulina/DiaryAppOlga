@@ -1,38 +1,38 @@
 ﻿
-
 @{
     ViewData["Title"] = "Index";
 }
 
-@*<div class="text-center">
-        <h1 class="display-4">Welcome</h1>
-        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    </div>*@
 
-<header class="masthead align-content-sm-start">
+<header class="masthead">
     
     <div class="container h-100">
         
             <div class="row h-100 align-items-center">
-                <div class="jumbotron jumbotron-fluid bg-transparent text-dark">
-                    <blockquote class="text-xl-left">
-                        @*<p class="lead font-italic font-weight-bold">
-                            Our goals can only be reached through a vehicle of a plan,<br> in which we must fervently believe, and upon which we must vigorously act.<br> There is no other route to success.” <br>
-                        <p class="text-muted font-italic">— Pablo Picasso</p>*@
 
-                        <p class="lead font-italic font-weight-bold">
+                <div class="col-12 jumbotron jumbotron-fluid bg-transparent text-dark">
+                    @*<blockquote class="text-xl-left">
+                                                <p class="lead font-italic font-weight-bold">
                             "Always remember,<br> your focus<br> determines<br>your reality.” <br>
                         <p class="text-muted font-italic">— George Lucas</p>
 
-                    </blockquote>
+                    </blockquote>*@
                     <div class="container">
-                        <h1 class="display-4">Welcome</h1>
-                        <p class="lead"> The Focused Diary is a tool that will help you achieve your goals.</p>
+                        <h1 class="display-4 text-center">Reach your goals with the focused diary!</h1>
+                        <p class="lead text-center">It is more than just a diary. @*The Focused Diary is a tool that will help you achieve your goals.*@</p>
 
-                        <p><a class="btn btn-warning btn-lg card-shadow" asp-action="About" role="button">Learn more &raquo;</a></p>
+                        <p class="lead text-center"><a class="btn btn-warning btn-lg card-shadow toggle" asp-action="About" role="button">Learn more &raquo;</a></p>
                     </div>
                 </div>
             </div>
 
         </div>
 </header>
+
+
+<section class="py-5">
+    <div class="container">
+        <h2 class="font-weight-light">Page Content</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus ab nulla dolorum autem nisi officiis blanditiis voluptatem hic, assumenda aspernatur facere ipsam nemo ratione cumque magnam enim fugiat reprehenderit expedita.</p>
+    </div>
+</section>
