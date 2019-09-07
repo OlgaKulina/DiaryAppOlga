@@ -1,45 +1,55 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DiaryAppOlga.Models
 {
-    public class WeeklyTask
+    public enum PrioritiesW
+    {
+        High, Medium, Low
+    }
+
+
+    public abstract class WeeklyTask
     {
         
         public int Id { get; set; }
-        
 
-        static IEnumerable<WeekNumber> GetWeeklyNumber()
-        {
-            return new List<WeekNumber> ()
-            {
-             new WeekNumber() { WeekNumberName = "First week:"},
-             new WeekNumber() { WeekNumberName = "Second week:"},
-             new WeekNumber() { WeekNumberName = "Third week:"},
-             new WeekNumber() { WeekNumberName = "Fourth week:"}
-            };
-        }
+        [Required(ErrorMessage = "Set a task.")]
+        [Display(Name = "Task")]
+        [StringLength(50, MinimumLength = 10, ErrorMessage = "Task length must be between 10 and 50 characters!")]
+        public string TaskName { get; set; }
 
-        public class WeekNumber
-        {
-            public string WeekNumberName { get; internal set; }
-        }
+        [Required(ErrorMessage = "Add a description for the task. No more than 500 characters!")]
+        [Display(Name = "Description")]
+        [StringLength(500)]
+        public string Description { get; set; }
 
 
-        //[Required(ErrorMessage = "Set start date")]
-        //[DataType(DataType.Date)]
-        //[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        //public DateTime Start_date { get; set; }
+        public bool Status { get; private set; }
 
-        //[Required(ErrorMessage = "Set end date")]
-        //[DataType(DataType.Date)]
-        //[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        //public DateTime End_date { get; set; }
+        [Required(ErrorMessage = "Set a priority for the task!")]
+        [Display(Name = "Priority")]
+        public PrioritiesW? PrioritiesW { get; set; }
 
 
-        public int UserTask_Id { get; set; }
-        public UserTask UserTask { get; set; }
-
+        public Grade Grade { get; set; }    
+                     
     }
+
+
+
+    
+    public class FirstWeek : WeeklyTask { /*public string NumberWeek= { }*/ }
+
+    
+    public class SecondWeek : WeeklyTask { }
+
+   
+    public class ThirdWeek : WeeklyTask { }
+
+    
+    public class FourthWeek : WeeklyTask { }
+
+
+
 }

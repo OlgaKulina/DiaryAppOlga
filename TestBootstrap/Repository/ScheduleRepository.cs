@@ -22,6 +22,14 @@ namespace DiaryAppOlga.Repository
             this.context.SaveChanges();
         }
 
+        //public void AddMonthlyTask(MonthlyTask monthlyTask)
+        //{
+        //    this.context.MonthlyTask.Add(monthlyTask);
+        //    this.context.SaveChanges();
+        //}
+
+
+
         public void UpdateUserTask(UserTask userTask)
         {
             context.UserTasks.Update(userTask);

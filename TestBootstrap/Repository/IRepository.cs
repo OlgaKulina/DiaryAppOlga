@@ -1,8 +1,6 @@
 ﻿using DiaryAppOlga.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace DiaryAppOlga.Repository
 {
@@ -13,6 +11,7 @@ namespace DiaryAppOlga.Repository
         UserTask GetUserTask(int key);
 
         void AddUserTask(UserTask userTask);
+        
 
         void UpdateUserTask(UserTask userTask);
 
