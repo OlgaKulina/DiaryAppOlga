@@ -12,7 +12,7 @@ namespace DiaryAppOlga.Models
     public abstract class WeeklyTask
     {
         
-        public int Id { get; set; }
+        public int WeeklyTaskId { get; set; }
 
         [Required(ErrorMessage = "Set a task.")]
         [Display(Name = "Task")]
@@ -32,23 +32,29 @@ namespace DiaryAppOlga.Models
         public PrioritiesW? PrioritiesW { get; set; }
 
 
-        public Grade Grade { get; set; }    
-                     
+        public Grade Grade { get; set; }
+
+        // Realization of the connection between Goal and Weekly Tasks
+        public int GoalId { get; set; }
+        public Goal Goal { get; set; }
+        
+        
+
     }
 
 
 
-    
-    public class FirstWeek : WeeklyTask { /*public string NumberWeek= { }*/ }
+   // [Table("First Week")]
+    public class FirstWeek : WeeklyTask { public int FiW_Id { get; set; } }
 
-    
-    public class SecondWeek : WeeklyTask { }
+    [Table("Second Week")]
+    public class SecondWeek : WeeklyTask { public int SW_Id { get; set; } }
 
-   
-    public class ThirdWeek : WeeklyTask { }
+    [Table("Third Week")]
+    public class ThirdWeek : WeeklyTask { public int TW_Id { get; set; } }
 
-    
-    public class FourthWeek : WeeklyTask { }
+    [Table("Forth Week")]
+    public class FourthWeek : WeeklyTask { public int FoW_Id { get; set; } }
 
 
 

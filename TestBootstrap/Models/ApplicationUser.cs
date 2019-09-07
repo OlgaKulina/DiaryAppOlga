@@ -10,5 +10,7 @@ namespace DiaryAppOlga.Models
         public string Name { get; set; }
         [PersonalData]
         public int Age { get; set; }
+        
+
     }
 }

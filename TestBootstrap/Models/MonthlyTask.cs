@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace DiaryAppOlga.Models
@@ -10,9 +9,9 @@ namespace DiaryAppOlga.Models
     }
 
     public class MonthlyTask
-    {      
-                
-        public int Id { get; set; }
+    {
+
+        public int MonthlyTaskId { get; set; }
 
         [Required(ErrorMessage = "Set a task.")]
         [Display(Name = "Task")]
@@ -33,7 +32,7 @@ namespace DiaryAppOlga.Models
 
 
         public Grade Grade { get; set; }
-              
+
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
@@ -55,6 +54,11 @@ namespace DiaryAppOlga.Models
         {
             Status = false;
         }
+
+        // Realization of the connection between Goal and Monthly Tasks
+
+        public int GoalId {get;set;}
+        public Goal Goal { get; set; }
 
 
         //Create a method that validates date input

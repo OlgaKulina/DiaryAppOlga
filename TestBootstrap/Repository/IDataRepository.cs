@@ -4,7 +4,8 @@ using System.Collections.Generic;
 
 namespace DiaryAppOlga.Repository
 {
-    interface IDataRepository<T> where T : class
+    public interface IDataRepository<T>
+        where T : class
     {
         IEnumerable<T> ListAll { get; }
         T GetById (int key);

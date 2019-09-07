@@ -12,7 +12,7 @@ namespace DiaryAppOlga.Repository
         public GoalRepository(GeneralScheduleContext ctx) => context = ctx;
 
         public IEnumerable<Goal> ListAll => context.Goals.ToArray();
-
+        
         public Goal GetById(int key) => context.Goals.Find(key);
 
         public void Add(Goal goal)

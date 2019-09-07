@@ -1,15 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace DiaryAppOlga.Models
 {
     public class Goal
     {
 
-        public int Id { get; set; }
+        public int GoalId { get; set; }
+
+        //public ApplicationUser UserName { get; set; }
+
+        //public ApplicationUser ApplicationUser { get; set; }
         
         [Required(ErrorMessage = "Set your goal!")]
         [Display(Name = "Goal")]
@@ -26,5 +28,8 @@ namespace DiaryAppOlga.Models
         public DateTime EndDate { get; set; }
 
         public bool Status { get; set; }
+
+
+
     }
 }

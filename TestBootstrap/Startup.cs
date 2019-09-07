@@ -77,7 +77,16 @@ namespace DiaryAppOlga
             services.AddDbContext<ScheduleContext>(options =>
               options.UseSqlServer(Configuration.GetConnectionString("ScheduleConnection")));
 
-            
+
+            services.AddScoped<IDataRepository<Goal>, GoalRepository>();
+            services.AddScoped<IDataRepository<MonthlyTask>, MonthlyScheduleRepository>();
+            services.AddScoped<IDataRepository<WeeklyTask>, WeeklyScheduleRepository>();
+            services.AddDbContext<GeneralScheduleContext>(options =>
+              options.UseSqlServer(Configuration.GetConnectionString("MainDBConnection")));
+
+
+
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             
         }
