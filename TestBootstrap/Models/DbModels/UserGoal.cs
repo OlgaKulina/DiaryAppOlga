@@ -4,11 +4,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace DiaryAppOlga.Models
 {
-    public class Goals
+    public class UserGoal: BaseEntity
     {
 
-        public int GoalId { get; set; }
-
+       
         //public ApplicationUser UserName { get; set; }
 
         //public ApplicationUser ApplicationUser { get; set; }
@@ -28,8 +27,6 @@ namespace DiaryAppOlga.Models
         public DateTime EndDate { get; set; }
 
         public bool Status { get; set; }
-
-
 
     }
 }

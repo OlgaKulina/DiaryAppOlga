@@ -1,17 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace DiaryAppOlga.Models
+
+namespace DiaryAppOlga.Models.DbModels
 {
-    public enum Priorities
+    public class MTask: BaseEntity
     {
-        High, Medium, Low
-    }
-
-    public class MonthlyTask
-    {
-
-        public int MonthlyTaskId { get; set; }
+        
 
         [Required(ErrorMessage = "Set a task.")]
         [Display(Name = "Task")]
@@ -28,7 +24,7 @@ namespace DiaryAppOlga.Models
 
         [Required(ErrorMessage = "Set a priority for the task!")]
         [Display(Name = "Priority")]
-        public Priorities? Priorities { get; set; }
+        public Priorities Priorities { get; set; }
 
 
         public Grade Grade { get; set; }
@@ -42,28 +38,16 @@ namespace DiaryAppOlga.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime EndDate { get; set; }
 
-
-
-
-        public void Done()
-        {
-            Status = true;
-        }
-
-        public void NotDone()
-        {
-            Status = false;
-        }
-
+                
         // Realization of the connection between Goal and Monthly Tasks
 
-        public int GoalId {get;set;}
+        
         public Goals Goal { get; set; }
 
 
         //Create a method that validates date input
 
-
-
+        //IEnumerable<WTask> weeks;
+        //IEnumerable<WTask> wTasks = new List<WTask>(4);
     }
 }

@@ -11,7 +11,7 @@ namespace DiaryAppOlga.Models
            : base(options)
         { }
 
-        public DbSet<Goal> Goals { get; set; }
+        public DbSet<Goals> Goals { get; set; }
         public DbSet<MonthlyTask> MonthlyTasks { get; set; }
         
         public DbSet<WeeklyTask> WeeklyTasks { get; set; }

@@ -8,11 +8,11 @@ namespace DiaryAppOlga.Controllers
 {
     public class GeneralScheduleController : Controller
     {
-        private IDataRepository<Goal> goalRepository;
+        private IDataRepository<Goals> goalRepository;
         private IDataRepository<MonthlyTask> mtaskRepository;
         private IDataRepository<WeeklyTask> wtaskRepository;
 
-        private GeneralScheduleController(IDataRepository<Goal> repo) => goalRepository = repo;
+        private GeneralScheduleController(IDataRepository<Goals> repo) => goalRepository = repo;
         public GeneralScheduleController(IDataRepository<MonthlyTask> repoMT) => mtaskRepository = repoMT;
         private GeneralScheduleController(IDataRepository<WeeklyTask> repoWT) => wtaskRepository = repoWT;
 
@@ -27,7 +27,7 @@ namespace DiaryAppOlga.Controllers
                
         
         [HttpPost]
-        public IActionResult AddGoal(Goal goal)
+        public IActionResult AddGoal(Goals goal)
         {
             goalRepository.Add(goal);
             return RedirectToAction(nameof(Goals));
@@ -41,7 +41,7 @@ namespace DiaryAppOlga.Controllers
         }
 
         [HttpPost]
-        public IActionResult UpdateGoal(Goal goal)
+        public IActionResult UpdateGoal(Goals goal)
         {
 
             goalRepository.Update(goal);
@@ -50,7 +50,7 @@ namespace DiaryAppOlga.Controllers
 
 
         [HttpPost]
-        public IActionResult DeleteGoal(Goal goal)
+        public IActionResult DeleteGoal(Goals goal)
         {
 
             goalRepository.Delete(goal);

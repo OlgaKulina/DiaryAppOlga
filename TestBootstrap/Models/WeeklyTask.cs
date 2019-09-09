@@ -36,7 +36,7 @@ namespace DiaryAppOlga.Models
 
         // Realization of the connection between Goal and Weekly Tasks
         public int GoalId { get; set; }
-        public Goal Goal { get; set; }
+        public Goals Goal { get; set; }
         
         
 

@@ -5,29 +5,29 @@ using System.Linq;
 
 namespace DiaryAppOlga.Repository
 {
-    public class GoalRepository:IDataRepository<Goal>
+    public class GoalRepository:IDataRepository<Goals>
     {
         private GeneralScheduleContext context;
 
         public GoalRepository(GeneralScheduleContext ctx) => context = ctx;
 
-        public IEnumerable<Goal> ListAll => context.Goals.ToArray();
+        public IEnumerable<Goals> ListAll => context.Goals.ToArray();
         
-        public Goal GetById(int key) => context.Goals.Find(key);
+        public Goals GetById(int key) => context.Goals.Find(key);
 
-        public void Add(Goal goal)
+        public void Add(Goals goal)
         {
             this.context.Goals.Add(goal);
             this.context.SaveChanges();
         }
 
-        public void Update(Goal goal)
+        public void Update(Goals goal)
         {
             context.Goals.Update(goal);
             context.SaveChanges();
         }
 
-        public void Delete(Goal goal)
+        public void Delete(Goals goal)
         {
 
             context.Goals.Remove(goal);
