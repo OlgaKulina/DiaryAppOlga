@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 
 namespace DiaryAppOlga.Models.DbModels
@@ -17,14 +16,12 @@ namespace DiaryAppOlga.Models.DbModels
         [Display(Name = "Description")]
         [StringLength(500)]
         public string Description { get; set; }
-
-
-        public bool Status { get; private set; }
-
+        
         [Required(ErrorMessage = "Set a priority for the task!")]
         [Display(Name = "Priority")]
         public Priorities Priorities { get; set; }
 
+        public bool Status { get; private set; }
 
         public Grade Grade { get; set; }
 

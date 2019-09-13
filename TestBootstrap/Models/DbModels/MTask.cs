@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 
 namespace DiaryAppOlga.Models.DbModels
@@ -17,29 +15,21 @@ namespace DiaryAppOlga.Models.DbModels
         [Required(ErrorMessage = "Add a description for the task. No more than 500 characters!")]
         [Display(Name = "Description")]
         [StringLength(500)]
-        public string Description { get; set; }
-
-
-        public bool Status { get; private set; }
+        public string Description { get; set; }        
 
         [Required(ErrorMessage = "Set a priority for the task!")]
         [Display(Name = "Priority")]
         public Priorities Priorities { get; set; }
 
 
+        public bool Status { get; private set; }
+
         public Grade Grade { get; set; }
 
 
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime StartDate { get; set; }
-
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime EndDate { get; set; }
-
+        
                 
-        // Realization of the connection between Goal and Monthly Tasks
+        // Realization of the connection between Goal and MTask ???
 
         
         public Goals Goal { get; set; }

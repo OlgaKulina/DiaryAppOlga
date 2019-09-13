@@ -15,8 +15,6 @@ namespace DiaryAppOlga.Models.DbModels
         [Display(Name = "Description")]
         [StringLength(500)]
         public string Description { get; set; }
-
-
         
 
         [Required(ErrorMessage = "Set a priority for the task!")]

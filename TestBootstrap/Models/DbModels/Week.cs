@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+
 
 namespace DiaryAppOlga.Models.DbModels
 {
     public class Week: BaseEntity
     {
-        
-        List<DTask> dTasks = new List<DTask>(7);
+        public int WeekNumber { get; private set; }
+        //List<DTask> dTasks = new List<DTask>(7);
+
+        List<WTask> wTasks = new List<WTask>();
 
     }
 }

@@ -6,7 +6,7 @@ using DiaryAppOlga.Models;
 
 namespace Microsoft.DiaryAppOlga.ApplicationCore.Interfaces
 {
-    public interface IAsyncSRepository<T> : IDisposable where T:BaseEntity/*, IAggregateRoot*/
+    public interface IAsyncSRepository<T> : IDisposable where T: BaseEntity
     {
         Task<T> GetByIdAsync(int id);
         //Task<IReadOnlyList<T>> ListAllAsync();
