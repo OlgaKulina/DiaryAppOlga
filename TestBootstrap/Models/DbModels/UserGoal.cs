@@ -8,9 +8,8 @@ namespace DiaryAppOlga.Models
     {
 
        
-        //public ApplicationUser UserName { get; set; }
-
-        //public ApplicationUser ApplicationUser { get; set; }
+        
+        public ApplicationUser ApplicationUser { get; set; }
         
         [Required(ErrorMessage = "Set your goal!")]
         [Display(Name = "Goal")]

@@ -4,7 +4,7 @@ namespace DiaryAppOlga.Models.DbModels
 {
     public class DTask: BaseEntity
     {
-        public int DayNumber { get; private set; }
+       
 
         [Required(ErrorMessage = "Set a task.")]
         [Display(Name = "Task")]
@@ -23,9 +23,22 @@ namespace DiaryAppOlga.Models.DbModels
 
         public bool Status { get; private set; }
 
-        public Grade Grade { get; set; }       
+        public Grade Grade { get; set; }
 
-        public Goals Goal { get; set; }
+        public UserGoal UserGoal { get; set; }
+
+        //public Day DayId { get; set; }
+        public Day Day { get; set; }
+               
+        public void Done()
+        {
+            Status = true;
+        }
+
+        public void NotDone()
+        {
+            Status = false;
+        }
 
     }
 }

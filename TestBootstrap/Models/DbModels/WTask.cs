@@ -27,14 +27,18 @@ namespace DiaryAppOlga.Models.DbModels
 
         // Realization of the connection between Goal and Weekly Tasks
         
-        public Goals Goal { get; set; }
+        public UserGoal UserGoal { get; set; }
+
+
+        public Week Week { get; set; }
+
 
         // IEnumerable<DTask> days;
 
 
 
-        
-       
-        
+
+
+
     }
 }

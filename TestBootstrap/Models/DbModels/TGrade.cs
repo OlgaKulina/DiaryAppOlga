@@ -8,7 +8,7 @@ namespace DiaryAppOlga.Models.DbModels
         public string GradeName { get; set; }
         public string Smile { get; set; }
 
-        private static IEnumerable<TGrade> GetGrades()
+        static IEnumerable<TGrade> GetGrades()
         {
             return new List<TGrade>()
             {
@@ -21,4 +21,7 @@ namespace DiaryAppOlga.Models.DbModels
         }
 
     }
+
+
+
 }

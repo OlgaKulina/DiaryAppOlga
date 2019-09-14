@@ -5,10 +5,9 @@ namespace DiaryAppOlga.Models.DbModels
 {
     public class Week: BaseEntity
     {
-        public int WeekNumber { get; private set; }
-        //List<DTask> dTasks = new List<DTask>(7);
+        public int WeekNumber { get; set; }        
+        public List<WTask> wTasks { get; set;}
 
-        List<WTask> wTasks = new List<WTask>();
-
+        
     }
 }

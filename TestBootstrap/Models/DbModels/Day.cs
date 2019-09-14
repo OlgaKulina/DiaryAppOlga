@@ -3,10 +3,12 @@
 
 namespace DiaryAppOlga.Models.DbModels
 {
-    public class Day: BaseEntity
+    public class Day : BaseEntity
     {
-        public int DayNumber { get; private set; }
+        public int DayNumber { get; set; }
+        public List<DTask> dTasks {get; set;}
 
-        //List<Days> dTasks = new List<Days>(30);
+                            
+        
     }
 }

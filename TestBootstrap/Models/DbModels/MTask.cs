@@ -27,12 +27,15 @@ namespace DiaryAppOlga.Models.DbModels
         public Grade Grade { get; set; }
 
 
-        
-                
+
+
         // Realization of the connection between Goal and MTask ???
 
-        
-        public Goals Goal { get; set; }
+
+        public UserGoal UserGoal { get; set; }
+
+
+        public Month Month { get; set; }
 
 
         //Create a method that validates date input
