@@ -3,9 +3,9 @@
 
 namespace DiaryAppOlga.Models.DbModels
 {
-    public class MTask: BaseEntity
+    public class MTask : BaseEntity
     {
-        
+
 
         [Required(ErrorMessage = "Set a task.")]
         [Display(Name = "Task")]
@@ -15,7 +15,7 @@ namespace DiaryAppOlga.Models.DbModels
         [Required(ErrorMessage = "Add a description for the task. No more than 500 characters!")]
         [Display(Name = "Description")]
         [StringLength(500)]
-        public string Description { get; set; }        
+        public string Description { get; set; }
 
         [Required(ErrorMessage = "Set a priority for the task!")]
         [Display(Name = "Priority")]
@@ -24,23 +24,29 @@ namespace DiaryAppOlga.Models.DbModels
 
         public bool Status { get; private set; }
 
-        public Grade Grade { get; set; }
+        public void Done()
+        {
+            this.Status = true;
+        }
+
+        public void NotDone()
+        {
+            this.Status = false;
+        }
+
+        public int GradeId { get; set; }
+        public virtual Grade Grade { get; set; }
+               
+                
+        public int UserGoalId { get; set; }
+        public virtual UserGoal UserGoal { get; set; }
+
+        public int MonthId { get; set; }
+        public virtual Month Month { get; set; }
 
 
+        
 
-
-        // Realization of the connection between Goal and MTask ???
-
-
-        public UserGoal UserGoal { get; set; }
-
-
-        public Month Month { get; set; }
-
-
-        //Create a method that validates date input
-
-        //IEnumerable<WTask> weeks;
-        //IEnumerable<WTask> wTasks = new List<WTask>(4);
+        
     }
 }

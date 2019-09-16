@@ -5,7 +5,7 @@ namespace DiaryAppOlga.Models.DbModels
 {
     public class Priorities: BaseEntity
     {
-        
+        //rewrite with flags
         public string PriorityName { get; set; }
 
         static IEnumerable<Priorities> GetPriorities()

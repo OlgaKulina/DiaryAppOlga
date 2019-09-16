@@ -5,22 +5,28 @@ namespace DiaryAppOlga.Models.DbModels
 {
     public class WeeklyPlan : BaseEntity
     {
-        //List<Week> weeks = new List<Week>(4);
+        public int MonthlyPlanId { get; set; }
+        public virtual MonthlyPlan MonthlyPlan { get; set; }
+
+
+        public int DailyPlanId { get; set; }
+        public virtual DailyPlan DailyPlan { get; set; }
+
 
         private static List<Week> CreateListWeeks()
         {
-            return new List<Week>
+            List<Week> tmp = new List<Week>(4);
+            for (int i = 0; i <= 4; i++)
             {
-                { new Week(){WeekNumber=1}},
-                { new Week(){WeekNumber=2}},
-                { new Week(){WeekNumber=3}},
-                { new Week(){WeekNumber=4}}
-             };
-         }
+                tmp.Add(new Week() { WeekNumber = i });
 
-        public MonthlyPlan MonthlyPlan { get; set; }
-        public DailyPlan DailyPlan { get; set; }
+            }
 
+            return tmp;
+                        
+        }
+
+        
     }
 
    

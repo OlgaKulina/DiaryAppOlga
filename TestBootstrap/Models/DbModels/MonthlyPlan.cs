@@ -6,24 +6,24 @@ namespace DiaryAppOlga.Models.DbModels
 {
     public class MonthlyPlan: BaseEntity
     {
+        public int UserGoalId { get; set; }
+        public virtual UserGoal UserGoal { get; set; }
+
+        public int WeeklyPlanId { get; set; }
+        public virtual WeeklyPlan WeeklyPlan { get; set; }
                
-        private static List<Month> CreateListWeeks()
+        private static List<Month> CreateListMonths()
         {
-            return new List<Month>
+            List<Month> tmp = new List<Month>(6);
+            for (int i = 0; i <= 6; i++)
             {
-                { new Month(){MonthNumber=1}},
-                { new Month(){MonthNumber=2}},
-                { new Month(){MonthNumber=3}},
-                { new Month(){MonthNumber=4}},
-                { new Month(){MonthNumber=5}},
-                { new Month(){MonthNumber=6}},
-             };
+                tmp.Add(new Month() { MonthNumber = i });
+
+            }
+
+            return tmp;                                    
         }
 
-               
-        public UserGoal UserGoal { get; set; }
-        public WeeklyPlan WeeklyPlan { get; set; }
-
-
+        
     }
 }

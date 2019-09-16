@@ -16,29 +16,33 @@ namespace DiaryAppOlga.Models.DbModels
         [Display(Name = "Description")]
         [StringLength(500)]
         public string Description { get; set; }
-        
+
         [Required(ErrorMessage = "Set a priority for the task!")]
         [Display(Name = "Priority")]
         public Priorities Priorities { get; set; }
 
         public bool Status { get; private set; }
 
+        public void Done()
+        {
+            this.Status = true;
+        }
+
+        public void NotDone()
+        {
+            this.Status = false;
+        }
+                                
         public Grade Grade { get; set; }
 
         // Realization of the connection between Goal and Weekly Tasks
-        
-        public UserGoal UserGoal { get; set; }
 
+        public int UserGoalId { get; set; }
+        public virtual UserGoal UserGoal { get; set; }
 
-        public Week Week { get; set; }
-
-
-        // IEnumerable<DTask> days;
-
-
-
-
-
+        public int WeekId { get; set; }
+        public virtual Week Week { get; set; }
+     
 
     }
 }

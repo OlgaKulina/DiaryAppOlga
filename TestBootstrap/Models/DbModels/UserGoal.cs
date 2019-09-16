@@ -1,16 +1,20 @@
-﻿using System;
+﻿using DiaryAppOlga.Models.DbModels;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 
 namespace DiaryAppOlga.Models
 {
     public class UserGoal: BaseEntity
-    {
+    {       
+        
+        public virtual ApplicationUser ApplicationUser { get; set; }
 
-       
-        
-        public ApplicationUser ApplicationUser { get; set; }
-        
+
+        public int MonthlyPlanId { get; set; }
+        public MonthlyPlan MonthlyPlan { get; set; }
+               
+                
         [Required(ErrorMessage = "Set your goal!")]
         [Display(Name = "Goal")]
         public string GoalName { get; set; }
@@ -26,6 +30,19 @@ namespace DiaryAppOlga.Models
         public DateTime EndDate { get; set; }
 
         public bool Status { get; set; }
+
+        public void Done()
+        {
+            this.Status = true;
+        }
+
+        public void NotDone()
+        {
+            this.Status = false;
+        }
+
+        
+
 
     }
 }

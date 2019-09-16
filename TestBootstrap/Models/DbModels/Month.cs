@@ -6,10 +6,8 @@ namespace DiaryAppOlga.Models.DbModels
     public class Month: BaseEntity
     {
         public int MonthNumber { get; set; }
-        public List<MTask> mTasks { get; set; }
-
-
-        //List<MTask> wTasks = new List<MTask>();
+        public virtual List<MTask> MTasks { get; set; }
+       
 
     }
 }
