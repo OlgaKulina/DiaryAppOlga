@@ -32,8 +32,9 @@ namespace DiaryAppOlga.Models.DbModels
         {
             this.Status = false;
         }
-                                
-        public Grade Grade { get; set; }
+
+        public int GradeId { get; set; }
+        public virtual Grade Grade { get; set; }
 
         // Realization of the connection between Goal and Weekly Tasks
 

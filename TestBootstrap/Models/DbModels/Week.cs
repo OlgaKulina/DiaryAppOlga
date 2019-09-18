@@ -8,6 +8,5 @@ namespace DiaryAppOlga.Models.DbModels
         public int WeekNumber { get; set; }        
         public virtual List<WTask> WTasks { get; set; }
         
-
     }
 }

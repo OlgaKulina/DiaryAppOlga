@@ -1,5 +1,5 @@
 ﻿
-namespace DiaryAppOlga.Models
+namespace DiaryAppOlga.Models.DbModels
 {
     public class BaseEntity
     {
