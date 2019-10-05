@@ -2,13 +2,13 @@
 
 namespace DiaryAppOlga.Repository.DBRepository
 {
-    public class MTaskRepository: GenRepository<MTask>
-    {
+    //public class MTaskRepository: GenRepository<MTask>
+    //{
 
-        public MTaskRepository(DatabaseContext dbcontext) : base(dbcontext)
-        {
+    //    //public MTaskRepository(DatabaseContext dbcontext) : base(dbcontext)
+    //    //{
 
-        }
+    //    //}
 
-    }
+    //}
 }

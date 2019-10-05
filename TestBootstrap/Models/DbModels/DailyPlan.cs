@@ -8,19 +8,19 @@ namespace DiaryAppOlga.Models.DbModels
         public int WeeklyPlanId { get; set; }
         public virtual WeeklyPlan WeeklyPlan { get; set; }
 
-        public static void CreateListDays(DatabaseContext context)
-        {
+        //public static void CreateListDays(DatabaseContext context)
+        //{
 
-            var tmp = new List<Day>(30);
+        //    var tmp = new List<Day>(30);
             
-                for (int i = 0; i <= 30; i++)
-                {
-                    tmp.Add(new Day() { DayNumber = i });
-                    //tmp.ForEach(Day => context.Days.Add(new Day() { DayNumber = i }));
-                    context.SaveChanges();
-                }
-                //return tmp;            
-        }
+        //        for (int i = 0; i <= 30; i++)
+        //        {
+        //            tmp.Add(new Day() { DayNumber = i });
+        //            //tmp.ForEach(Day => context.Days.Add(new Day() { DayNumber = i }));
+        //            context.SaveChanges();
+        //        }
+        //        //return tmp;            
+        //}
 
 
 
